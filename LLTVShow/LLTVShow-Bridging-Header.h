@@ -11,9 +11,15 @@
 #import "SnapKit.h"
 #import "UIScrollView+EmptyDataSet.h"
 #import <ShareSDK/ShareSDK.h>
-#import <ShareSDKUI/ShareSDK+SSUI.h>
+
 #import <ShareSDKConnector/ShareSDKConnector.h>
 
 //腾讯SDK头文件
 #import <TencentOpenAPI/TencentOAuth.h>
 #import <TencentOpenAPI/QQApiInterface.h>
+// 弹出分享菜单需要导入的头文件
+#import <ShareSDKUI/ShareSDK+SSUI.h>
+// 自定义分享菜单栏需要导入的头文件
+#import <ShareSDKUI/SSUIShareActionSheetStyle.h>
+//#自定义分享编辑界面所需要导入的头文件
+#import <ShareSDKUI/SSUIEditorViewStyle.h>

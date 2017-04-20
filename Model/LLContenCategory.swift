@@ -8,7 +8,7 @@
 
 import UIKit
 typealias CategoryResult = (_ categories:[LLContenCategory]?) ->  Void
-class LLContenCategory:NSObject {
+class LLContenCategory:BmobObject {
     // {
 //    "status": "200",
 //    "message": "success",

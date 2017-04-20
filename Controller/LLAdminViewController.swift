@@ -7,14 +7,11 @@
 //
 
 import UIKit
-
 class LLAdminViewController: BaseViewController {
     var   tabdata:[LLRevertLayout] = [LLRevertLayout]()
     var   tableview:LLBaseTableView!
     lazy var refreshHeadView:LLRefreshView = {
         let refreshHeadView = LLRefreshView(refreshingTarget: self, refreshingAction: #selector(LLAdminViewController.headRefresh))
-        
-        
         return refreshHeadView!
     }()
     func  headRefresh(){

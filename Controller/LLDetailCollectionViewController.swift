@@ -88,26 +88,30 @@ class LLDetailCollectionViewController: BaseViewController {
     
     func   shareaction(){
         
-        let shareParames = NSMutableDictionary()
+        let   item = itemsdata?[(selectindex?.row)!]
+        
+        if  item != nil {
+        
+        
+         let shareParames = NSMutableDictionary()
+        
+        shareParames.ssdkEnableUseClientShare()
+        
         
         shareParames.ssdkSetupShareParams(byText: "分享内容",
-                                                images : UIImage(named: "share"),
-                                                url : NSURL(string:"http://mob.com") as URL!,
+                                                images : UIImage(named: "分享"),
+                                                url :URL( string:"https://github.com/lwiosbystep"),
                                                 title : "分享标题",
                                                 type : SSDKContentType.image)
         
         //2.进行分享
-        ShareSDK.share(.typeQQ, parameters: shareParames) { (state, others, entity, err) in
-            
-            if  err != nil {
-                print(err)
+        ShareSDK.showShareActionSheet(nil, items: nil, shareParams: shareParames) { (state, type, datas, entity, err, success) in
+            if success {
+                _ = SweetAlert().showAlert("分享成功！")
             }
-            print(state.rawValue)
             
-            
-            
+         }
         }
-        
         
         
     }
