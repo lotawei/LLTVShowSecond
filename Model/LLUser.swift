@@ -93,14 +93,7 @@ extension   LLUser{
         if    result {
             LLCurrentUser.currentuser.user =  self
             
-            
-            
-            
-            
         }
-        
-        
-        
         return result
     }
     //  清理用户信息

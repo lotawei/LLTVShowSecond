@@ -83,6 +83,21 @@
 		ED8A9D091E2F5FEF001A2EC8 /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A9CFE1E2F5FEF001A2EC8 /* TextFieldsEffects.swift */; };
 		ED8A9D0A1E2F5FEF001A2EC8 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A9CFF1E2F5FEF001A2EC8 /* YokoTextField.swift */; };
 		ED8A9D0B1E2F5FEF001A2EC8 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A9D001E2F5FEF001A2EC8 /* YoshikoTextField.swift */; };
+		ED8EBE621EA9E6A900876B03 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED8EBE541EA9E6A900876B03 /* Info.plist */; };
+		ED8EBE631EA9E6A900876B03 /* YNCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE551EA9E6A900876B03 /* YNCategoryButton.swift */; };
+		ED8EBE641EA9E6A900876B03 /* YNSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE571EA9E6A900876B03 /* YNSearch.swift */; };
+		ED8EBE651EA9E6A900876B03 /* YNSearch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED8EBE581EA9E6A900876B03 /* YNSearch.xcassets */; };
+		ED8EBE661EA9E6A900876B03 /* YNSearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE591EA9E6A900876B03 /* YNSearchDelegate.swift */; };
+		ED8EBE671EA9E6A900876B03 /* YNSearchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE5A1EA9E6A900876B03 /* YNSearchExtension.swift */; };
+		ED8EBE681EA9E6A900876B03 /* YNSearchHistoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE5B1EA9E6A900876B03 /* YNSearchHistoryButton.swift */; };
+		ED8EBE691EA9E6A900876B03 /* YNSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE5C1EA9E6A900876B03 /* YNSearchListView.swift */; };
+		ED8EBE6A1EA9E6A900876B03 /* YNSearchListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE5D1EA9E6A900876B03 /* YNSearchListViewCell.swift */; };
+		ED8EBE6B1EA9E6A900876B03 /* YNSearchMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE5E1EA9E6A900876B03 /* YNSearchMainView.swift */; };
+		ED8EBE6C1EA9E6A900876B03 /* YNSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE5F1EA9E6A900876B03 /* YNSearchTextField.swift */; };
+		ED8EBE6D1EA9E6A900876B03 /* YNSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE601EA9E6A900876B03 /* YNSearchView.swift */; };
+		ED8EBE6E1EA9E6A900876B03 /* YNSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE611EA9E6A900876B03 /* YNSearchViewController.swift */; };
+		ED8EBE701EA9E71C00876B03 /* LLSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE6F1EA9E71C00876B03 /* LLSearchViewController.swift */; };
+		ED8EBE741EAA1F1100876B03 /* LLResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EBE731EAA1F1100876B03 /* LLResultViewController.swift */; };
 		ED9307DA1E9FD2A5006E44FB /* Pod_Asset_BMPlayer.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED9307D91E9FD2A5006E44FB /* Pod_Asset_BMPlayer.xcassets */; };
 		ED9307E41E9FD2B6006E44FB /* BMPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9307DB1E9FD2B6006E44FB /* BMPlayer.swift */; };
 		ED9307E51E9FD2B6006E44FB /* BMPlayerClearityChooseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9307DC1E9FD2B6006E44FB /* BMPlayerClearityChooseButton.swift */; };
@@ -358,6 +373,22 @@
 		ED8A9CFE1E2F5FEF001A2EC8 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		ED8A9CFF1E2F5FEF001A2EC8 /* YokoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YokoTextField.swift; sourceTree = "<group>"; };
 		ED8A9D001E2F5FEF001A2EC8 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
+		ED8EBE541EA9E6A900876B03 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED8EBE551EA9E6A900876B03 /* YNCategoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNCategoryButton.swift; sourceTree = "<group>"; };
+		ED8EBE561EA9E6A900876B03 /* YNSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNSearch.h; sourceTree = "<group>"; };
+		ED8EBE571EA9E6A900876B03 /* YNSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearch.swift; sourceTree = "<group>"; };
+		ED8EBE581EA9E6A900876B03 /* YNSearch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YNSearch.xcassets; sourceTree = "<group>"; };
+		ED8EBE591EA9E6A900876B03 /* YNSearchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchDelegate.swift; sourceTree = "<group>"; };
+		ED8EBE5A1EA9E6A900876B03 /* YNSearchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchExtension.swift; sourceTree = "<group>"; };
+		ED8EBE5B1EA9E6A900876B03 /* YNSearchHistoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchHistoryButton.swift; sourceTree = "<group>"; };
+		ED8EBE5C1EA9E6A900876B03 /* YNSearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchListView.swift; sourceTree = "<group>"; };
+		ED8EBE5D1EA9E6A900876B03 /* YNSearchListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchListViewCell.swift; sourceTree = "<group>"; };
+		ED8EBE5E1EA9E6A900876B03 /* YNSearchMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchMainView.swift; sourceTree = "<group>"; };
+		ED8EBE5F1EA9E6A900876B03 /* YNSearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchTextField.swift; sourceTree = "<group>"; };
+		ED8EBE601EA9E6A900876B03 /* YNSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchView.swift; sourceTree = "<group>"; };
+		ED8EBE611EA9E6A900876B03 /* YNSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchViewController.swift; sourceTree = "<group>"; };
+		ED8EBE6F1EA9E71C00876B03 /* LLSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSearchViewController.swift; sourceTree = "<group>"; };
+		ED8EBE731EAA1F1100876B03 /* LLResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLResultViewController.swift; sourceTree = "<group>"; };
 		ED9307D91E9FD2A5006E44FB /* Pod_Asset_BMPlayer.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Pod_Asset_BMPlayer.xcassets; sourceTree = "<group>"; };
 		ED9307DB1E9FD2B6006E44FB /* BMPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BMPlayer.swift; path = ../BMPlayer.swift; sourceTree = "<group>"; };
 		ED9307DC1E9FD2B6006E44FB /* BMPlayerClearityChooseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BMPlayerClearityChooseButton.swift; path = ../BMPlayerClearityChooseButton.swift; sourceTree = "<group>"; };
@@ -623,7 +654,6 @@
 				ED3DB5491DEA8C890030B3BC /* 扩展 */,
 				ED3DB54A1DEA8C890030B3BC /* 全局 */,
 				ED3DB54C1DEA8C890030B3BC /* Controller */,
-				ED3DB54D1DEA8C890030B3BC /* Model */,
 				ED3DB54F1DEA8C890030B3BC /* View */,
 				ED3DB5291DEA8C490030B3BC /* LLTVShow */,
 				ED3DB5281DEA8C490030B3BC /* Products */,
@@ -695,6 +725,9 @@
 				EDF88B3A1E4D67320034CAAF /* LLTVListViewController.swift */,
 				EDF88B3C1E4D67C50034CAAF /* LLAcountViewController.swift */,
 				EDF82D151E9F66200099F5D1 /* LLAboutViewController.swift */,
+				ED8EBE6F1EA9E71C00876B03 /* LLSearchViewController.swift */,
+				ED8EBE731EAA1F1100876B03 /* LLResultViewController.swift */,
+				ED3DB54D1DEA8C890030B3BC /* Model */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -708,12 +741,14 @@
 				ED1F2B0C1E974A4000C6B08A /* LLWeatherInfo.swift */,
 				EDF00B531EA3479F0038DF3A /* LLRevertMsg.swift */,
 			);
-			path = Model;
+			name = Model;
+			path = ../Model;
 			sourceTree = "<group>";
 		};
 		ED3DB54F1DEA8C890030B3BC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ED8EBE531EA9E6A900876B03 /* YNSearch */,
 				EDF00B551EA355640038DF3A /* RevertCell.swift */,
 				ED6C413E1E9E5BE70060D848 /* IndexTittleView.swift */,
 				ED6C413C1E9E5BCD0060D848 /* IndexTittleView.xib */,
@@ -872,6 +907,27 @@
 				ED8A9D001E2F5FEF001A2EC8 /* YoshikoTextField.swift */,
 			);
 			path = TextFieldEffects;
+			sourceTree = "<group>";
+		};
+		ED8EBE531EA9E6A900876B03 /* YNSearch */ = {
+			isa = PBXGroup;
+			children = (
+				ED8EBE541EA9E6A900876B03 /* Info.plist */,
+				ED8EBE551EA9E6A900876B03 /* YNCategoryButton.swift */,
+				ED8EBE561EA9E6A900876B03 /* YNSearch.h */,
+				ED8EBE571EA9E6A900876B03 /* YNSearch.swift */,
+				ED8EBE581EA9E6A900876B03 /* YNSearch.xcassets */,
+				ED8EBE591EA9E6A900876B03 /* YNSearchDelegate.swift */,
+				ED8EBE5A1EA9E6A900876B03 /* YNSearchExtension.swift */,
+				ED8EBE5B1EA9E6A900876B03 /* YNSearchHistoryButton.swift */,
+				ED8EBE5C1EA9E6A900876B03 /* YNSearchListView.swift */,
+				ED8EBE5D1EA9E6A900876B03 /* YNSearchListViewCell.swift */,
+				ED8EBE5E1EA9E6A900876B03 /* YNSearchMainView.swift */,
+				ED8EBE5F1EA9E6A900876B03 /* YNSearchTextField.swift */,
+				ED8EBE601EA9E6A900876B03 /* YNSearchView.swift */,
+				ED8EBE611EA9E6A900876B03 /* YNSearchViewController.swift */,
+			);
+			path = YNSearch;
 			sourceTree = "<group>";
 		};
 		ED9307ED1E9FD306006E44FB /* 视频 */ = {
@@ -1319,11 +1375,13 @@
 				ED4E22551EA7B64D00444488 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				EDAC7E381E9A2D09008AC53F /* LLMovieItemCell.xib in Resources */,
 				ED4E22471EA7B64D00444488 /* ShareSDKConfigFile.bundle in Resources */,
+				ED8EBE651EA9E6A900876B03 /* YNSearch.xcassets in Resources */,
 				ED59FB661E2F037F00216063 /* LLLoginViewController.xib in Resources */,
 				EDD3C2591E728B9F005E43D8 /* Smoke.png in Resources */,
 				EDD3C2571E728B9F005E43D8 /* Fire.png in Resources */,
 				EDB7548C1E69478B00E2C350 /* Info.plist in Resources */,
 				ED3DB5301DEA8C490030B3BC /* Main.storyboard in Resources */,
+				ED8EBE621EA9E6A900876B03 /* Info.plist in Resources */,
 				EDAAFF831E778A5900EC8865 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1356,12 +1414,14 @@
 				EDF1547F1E6002E20001A946 /* MJRefreshNormalHeader.m in Sources */,
 				EDC18B031E55A6330026E4D2 /* KingfisherManager.swift in Sources */,
 				EDC18B061E55A6330026E4D2 /* Resource.swift in Sources */,
+				ED8EBE6D1EA9E6A900876B03 /* YNSearchView.swift in Sources */,
 				EDF154731E6002E20001A946 /* MJRefreshAutoFooter.m in Sources */,
 				EDAAFF651E778A5800EC8865 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				ED59FB5A1E2EFFA800216063 /* UIColor+extension.swift in Sources */,
 				EDB754841E69478B00E2C350 /* ConstraintPriority.swift in Sources */,
 				EDC18B011E55A6330026E4D2 /* Indicator.swift in Sources */,
 				ED42B6D61E7A6DD8008FCCF3 /* MenuViewDelegate.swift in Sources */,
+				ED8EBE741EAA1F1100876B03 /* LLResultViewController.swift in Sources */,
 				EDF154FF1E600B050001A946 /* MultipartFormData.swift in Sources */,
 				EDAAFF7B1E778A5800EC8865 /* NVActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				EDC18AF91E55A6330026E4D2 /* Filter.swift in Sources */,
@@ -1370,8 +1430,10 @@
 				EDF1550A1E600B050001A946 /* TaskDelegate.swift in Sources */,
 				ED9307EB1E9FD2B6006E44FB /* BMSubtitles.swift in Sources */,
 				EDF155061E600B050001A946 /* Result.swift in Sources */,
+				ED8EBE6C1EA9E6A900876B03 /* YNSearchTextField.swift in Sources */,
 				ED4356D41E765F9200D5C0B8 /* LLUerInfoView.swift in Sources */,
 				EDF1547A1E6002E20001A946 /* MJRefreshAutoStateFooter.m in Sources */,
+				ED8EBE6A1EA9E6A900876B03 /* YNSearchListViewCell.swift in Sources */,
 				EDF154741E6002E20001A946 /* MJRefreshBackFooter.m in Sources */,
 				EDAAFF6D1E778A5800EC8865 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				ED59FB601E2EFFD600216063 /* UIButton+extension.swift in Sources */,
@@ -1379,6 +1441,7 @@
 				ED4356FE1E76BF3000D5C0B8 /* LLTVCollectionList.swift in Sources */,
 				ED6C413F1E9E5BE70060D848 /* IndexTittleView.swift in Sources */,
 				EDA402321E24D00C00E00CCE /* LLAnimationTabBarController.swift in Sources */,
+				ED8EBE671EA9E6A900876B03 /* YNSearchExtension.swift in Sources */,
 				ED8A9D071E2F5FEF001A2EC8 /* MadokaTextField.swift in Sources */,
 				ED8A9D011E2F5FEF001A2EC8 /* AkiraTextField.swift in Sources */,
 				EDB754821E69478B00E2C350 /* ConstraintMultiplierTarget.swift in Sources */,
@@ -1415,6 +1478,7 @@
 				EDAAFF6E1E778A5800EC8865 /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				EDC18AF61E55A6330026E4D2 /* AnimatedImageView.swift in Sources */,
 				EDAAFF7C1E778A5800EC8865 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
+				ED8EBE681EA9E6A900876B03 /* YNSearchHistoryButton.swift in Sources */,
 				EDF154FB1E600B050001A946 /* Alamofire.swift in Sources */,
 				ED4579E91E653E4200AA95CC /* LLAuthManager.swift in Sources */,
 				EDD3C2511E728B9F005E43D8 /* LTMorphingLabel+Evaporate.swift in Sources */,
@@ -1434,6 +1498,7 @@
 				EDAAFF841E778A5900EC8865 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				EDB7547B1E69478B00E2C350 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				EDAAFF741E778A5800EC8865 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
+				ED8EBE691EA9E6A900876B03 /* YNSearchListView.swift in Sources */,
 				EDF155031E600B050001A946 /* Request.swift in Sources */,
 				EDB754861E69478B00E2C350 /* ConstraintRelatableTarget.swift in Sources */,
 				EDB754471E69431100E2C350 /* UITextField+fixCaretPosition.swift in Sources */,
@@ -1458,6 +1523,7 @@
 				EDF154831E6002E20001A946 /* NSBundle+MJRefresh.m in Sources */,
 				EDF155051E600B050001A946 /* ResponseSerialization.swift in Sources */,
 				EDD3C24B1E728B9F005E43D8 /* LTCharacterLimbo.swift in Sources */,
+				ED8EBE661EA9E6A900876B03 /* YNSearchDelegate.swift in Sources */,
 				EDB754701E69478B00E2C350 /* ConstraintConfig.swift in Sources */,
 				ED4DA7EE1E98C3600079FCD4 /* LLCategoryCell.swift in Sources */,
 				ED3DB55D1DEA9D040030B3BC /* UIViewextension.swift in Sources */,
@@ -1472,6 +1538,7 @@
 				EDAAFF6C1E778A5800EC8865 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				ED420D961E4C504F00C0EB4E /* LLRefreshView.swift in Sources */,
 				EDC18AFE1E55A6330026E4D2 /* ImageProcessor.swift in Sources */,
+				ED8EBE6B1EA9E6A900876B03 /* YNSearchMainView.swift in Sources */,
 				EDAAFF701E778A5800EC8865 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				ED42B6901E7A6296008FCCF3 /* UIScrollView+EmptyDataSet.m in Sources */,
 				EDDD54AF1E25EDDA00E3DC1F /* LLMainTabarController.swift in Sources */,
@@ -1481,6 +1548,7 @@
 				EDB754851E69478B00E2C350 /* ConstraintPriorityTarget.swift in Sources */,
 				EDD813AF1E9692E300A9D6B2 /* LLCategoryRecItem.swift in Sources */,
 				EDF154801E6002E20001A946 /* MJRefreshStateHeader.m in Sources */,
+				ED8EBE641EA9E6A900876B03 /* YNSearch.swift in Sources */,
 				ED42B6D21E7A6DD8008FCCF3 /* UIScrollView+NormalizedContentOffset.swift in Sources */,
 				EDD3C2521E728B9F005E43D8 /* LTMorphingLabel+Fall.swift in Sources */,
 				ED42B6D51E7A6DD8008FCCF3 /* MenuView.swift in Sources */,
@@ -1500,6 +1568,7 @@
 				ED441D501E02812C00B84AD4 /* LLCurrentUser.swift in Sources */,
 				EDB7547C1E69478B00E2C350 /* ConstraintMaker.swift in Sources */,
 				EDAAFF731E778A5800EC8865 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				ED8EBE6E1EA9E6A900876B03 /* YNSearchViewController.swift in Sources */,
 				EDB7548F1E69478B00E2C350 /* UILayoutSupport+Extensions.swift in Sources */,
 				ED42B6D11E7A6DD8008FCCF3 /* UIEdgeInsets+Equatable.swift in Sources */,
 				EDF154821E6002E20001A946 /* MJRefreshConst.m in Sources */,
@@ -1541,6 +1610,7 @@
 				EDB754461E69431100E2C350 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				EDB754451E69431100E2C350 /* SkyFloatingLabelTextField.swift in Sources */,
 				EDB7547A1E69478B00E2C350 /* ConstraintLayoutSupport.swift in Sources */,
+				ED8EBE701EA9E71C00876B03 /* LLSearchViewController.swift in Sources */,
 				EDF154851E6002E20001A946 /* UIScrollView+MJRefresh.m in Sources */,
 				EDAAFF7F1E778A5800EC8865 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
 				EDB754741E69478B00E2C350 /* ConstraintInsets.swift in Sources */,
@@ -1549,6 +1619,7 @@
 				EDB7546F1E69478B00E2C350 /* ConstraintAttributes.swift in Sources */,
 				EDB754801E69478B00E2C350 /* ConstraintMakerPriortizable.swift in Sources */,
 				EDF88B3B1E4D67320034CAAF /* LLTVListViewController.swift in Sources */,
+				ED8EBE631EA9E6A900876B03 /* YNCategoryButton.swift in Sources */,
 				EDC18AFD1E55A6330026E4D2 /* ImagePrefetcher.swift in Sources */,
 				ED8A9D051E2F5FEF001A2EC8 /* JiroTextField.swift in Sources */,
 			);

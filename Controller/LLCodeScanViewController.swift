@@ -35,7 +35,7 @@ class LLCodeScanViewController: BaseViewController , AVCaptureMetadataOutputObje
         // Do any additional setup after loading the view.
     }
     private func buildNavigationItem() {
-        navigationItem.title = "二维码"
+        
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.barTintColor = fontcolor
     }

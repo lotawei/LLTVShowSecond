@@ -14,10 +14,6 @@ protocol requestDataPro {
 //电视节目pai
 private  let  tvappkey = "b199f821a6285e32761ae5d3fdfa77a3"
 private  let  tvappurl = "http://japi.juhe.cn/tv/getCategory"
-
-
-
-
 //电视猫api
 
 private let Authcodeurl = "http://open.moretv.com.cn/authorize"

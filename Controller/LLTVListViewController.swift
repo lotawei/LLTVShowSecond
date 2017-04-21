@@ -98,7 +98,8 @@ class LLTVListViewController: BaseViewController {
         
     }
     func   searchaction(){
-        
+        let search = LLSearchViewController()
+        navigationController?.pushViewController(search, animated: true)
     }
     func   titleViewClick(){
         

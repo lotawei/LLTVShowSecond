@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-              print(userAccountPath)
+        print(userAccountPath)
         //  注册bmob的使用
         Bmob.register(withAppKey: bmobappkey)
         //  注册社交分享

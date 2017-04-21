@@ -92,6 +92,7 @@ class LLRegisterViewController: BaseViewController ,LTMorphingLabelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
+        titleView.text  = "注册"
         initview()
       
     }

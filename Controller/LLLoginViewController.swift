@@ -32,7 +32,7 @@ class LLLoginViewController: BaseViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = false
-            tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true
         view.backgroundColor = fontcolor
         
     }

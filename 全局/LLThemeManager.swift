@@ -14,8 +14,4 @@ import UIKit
 
 class LLThemeManager: NSObject {
     
-    
-    
-    
-    
 }
