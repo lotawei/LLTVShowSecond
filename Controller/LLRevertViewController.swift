@@ -10,26 +10,26 @@ import UIKit
 
 class LLRevertViewController: BaseViewController, UITextFieldDelegate,UITextViewDelegate{
 
-    lazy  var  lblphone:UILabel = {
-            let  lab = UILabel()
+    lazy  var  lblphone:LLBaseLable = {
+            let  lab = LLBaseLable()
             lab.text  = "联系方式："
             lab.font = UIFont.systemFont(ofSize: 14)
             lab.textAlignment = .left
         
-            lab.textColor = fontcolor
+//            lab.textColor = fontcolor
             return  lab
             
        
     }()
     
     
-    lazy  var   lblcontent:UILabel = {
+    lazy  var   lblcontent:LLBaseLable = {
         
-        let  lab = UILabel()
+        let  lab = LLBaseLable()
         lab.text  = "宝贵意见："
         lab.font = UIFont.systemFont(ofSize: 14)
         lab.textAlignment = .left
-        lab.textColor = fontcolor
+//        lab.textColor = fontcolor
         return  lab
         
         
@@ -56,7 +56,7 @@ class LLRevertViewController: BaseViewController, UITextFieldDelegate,UITextView
     
     lazy  var   lbllimit:UILabel = {
         
-        let  lab = UILabel()
+        let  lab = LLBaseLable()
         lab.text  = "限制500字"
         lab.font = UIFont.systemFont(ofSize: 10)
         lab.textAlignment = .right
@@ -134,7 +134,7 @@ class LLRevertViewController: BaseViewController, UITextFieldDelegate,UITextView
             maker.right.equalTo(txtcontent)
             maker.width.equalTo(200)
             maker.height.equalTo(20)
-            maker.top.equalTo(360)
+            maker.top.equalTo(370)
         }
         self.btnsend.snp.makeConstraints { (maker) in
             maker.right.equalTo(txtcontent)

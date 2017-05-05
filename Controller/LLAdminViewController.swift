@@ -22,7 +22,6 @@ class LLAdminViewController: BaseViewController {
             if   msgs == nil {
                 finish  = true
                 
-                
             }
             else {
                 
@@ -71,7 +70,7 @@ class LLAdminViewController: BaseViewController {
         
         
         tableview.snp.makeConstraints { (maker) in
-            maker.height.equalTo(ScreenHeight )
+            maker.height.equalTo(ScreenHeight - kStatusBarH - kNavigationBarH)
             
             maker.width.equalTo(ScreenWidth)
             maker.left.equalTo(0)

@@ -9,16 +9,34 @@ import UIKit
 
 // 为其扩展一个 颜色基调类
 extension   Substyle{
+    //颜色基调
     func substylecolor() -> UIColor {
         switch self.rawValue {
         case 0:
-            return  normalcolor
+            return  normalcolor  //  白底
         case 1:
-            return   darkcolor
+            return   darkcolor // 黑夜
         case 2:
-            return   eyecolor
+            return   eyecolor   // 青绿
+        case 2:
+            return   orcolor   // 橙底
         default:
             return  normalcolor
+        }
+    }
+    //根据图片创建
+    func substyleimgcolor() -> UIColor {
+        switch self.rawValue {
+        case 0:
+            return  tablelightcolor  //  白底
+        case 1:
+            return   tablebackcolor // 黑夜
+        case 2:
+            return   tableeyecolor   // 青绿
+        case 3:
+            return   orcolor   // 橙底
+        default:
+            return  tablelightcolor
         }
     }
 }
@@ -35,8 +53,7 @@ enum   Substyle:Int {
 
 class LLUser: NSObject ,NSCoding{
     
-    var  collectionitems:Set<LLCategoryRecItem>  = Set()
-
+    var    objectid:String?
     //昵称
     var   username:String!
     //用户类型
@@ -47,12 +64,15 @@ class LLUser: NSObject ,NSCoding{
     var   substyle:Substyle!
     //用户第一次使用本app  是的话可能就要打广告了
     var   isfirst:String!
+    
+    
     func encode(with aCoder: NSCoder) {
         aCoder.encode(username, forKey:"name")
         aCoder.encode(usertype.rawValue, forKey: "usertype")
         aCoder.encode(portrait, forKey: "portrait")
         aCoder.encode(substyle.rawValue, forKey: "substyle")
         aCoder.encode(isfirst, forKey: "isfirst")
+        aCoder.encode(objectid, forKey: "objectid")
         
    }
    
@@ -65,6 +85,7 @@ class LLUser: NSObject ,NSCoding{
             }
     required  init?(coder aDecoder: NSCoder) {
         super.init()
+         objectid =  aDecoder.decodeObject(forKey: "objectid") as?  String
         username =  aDecoder.decodeObject(forKey: "name") as!  String
 //          objid =  aDecoder.decodeObject(forKey: "objid") as!  String
         isfirst = aDecoder.decodeObject(forKey: "isfirst") as!  String
@@ -78,6 +99,8 @@ class LLUser: NSObject ,NSCoding{
         self.portrait = portrait
         self.substyle = substyle
         self.isfirst = isfirst
+        
+        
     }
    
 }
@@ -105,6 +128,12 @@ extension   LLUser{
         }
         
         LLCurrentUser.currentuser.user =  nil
+        LLCollectListManager.share.collectionitems.removeAll()
+         LLCollectListManager.share.watcheditems.removeAll()
+         LLDownMovieItems.share.items.removeAll()
+            LLSqlLiteHelper.share.cleantab()
+        //  删除本地数据库的信息
+        
         
     }
     
@@ -134,13 +163,16 @@ extension   LLUser{
             if  err == nil &&  (users?.count)! > 0{
               let   user = users?[0] as!  BmobObject
     
+                
                 objresult(user.objectId)
             }
             
             
         })
         
-        }
+    }
+    
+    
     
     
     

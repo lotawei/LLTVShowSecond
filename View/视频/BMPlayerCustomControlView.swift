@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class BMPlayerCustomControlView: BMPlayerControlView {
     
     var playbackRateButton = UIButton(type: .custom)

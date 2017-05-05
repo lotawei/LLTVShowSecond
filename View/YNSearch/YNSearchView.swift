@@ -38,7 +38,7 @@ open class YNSearchView: UIView, YNSearchMainViewDelegate, YNSearchListViewDeleg
         
         self.addSubview(ynScrollView)
         
-        
+       
     }
     
     open func ynSearchMainViewSearchHistoryChanged() {

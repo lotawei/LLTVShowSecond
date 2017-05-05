@@ -8,19 +8,24 @@
 //   先每个播放 同样的视频  http://baobab.wdjcdn.com/1456117847747a_x264.mp4
 import UIKit
 
+@objc protocol DetailcellProDelegate:NSObjectProtocol {
+    @objc optional func   DidClickpreview(_ item:LLCategoryRecItem)
+    
+    
+}
+
+
+
 
 // http://qr.liantu.com/api.php?&bg=A6A6A6&fg=EDEDED&text=x
 class LLDetailCollectionViewCell: UICollectionViewCell {
-    
-    
-    
-    
-    
+    weak   var   delegate:DetailcellProDelegate?
     lazy  var   scrollerview:UIScrollView = {
         let scroller = UIScrollView()
         
         scroller.showsHorizontalScrollIndicator = false
         
+        scroller.contentSize = CGSize(width:0,height:350)
         return scroller
         
     }()
@@ -49,7 +54,9 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
         
         let    imgview = UIImageView()
         imgview.isUserInteractionEnabled = true
-        imgview.contentMode = .scaleAspectFit
+        imgview.contentMode = .scaleToFill
+        imgview.contentScaleFactor = 300.0 / 208.0
+        imgview.autoresizingMask = UIViewAutoresizing.flexibleHeight
         return  imgview
         
     }()
@@ -57,11 +64,22 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
       let    btn = UIButton()
         btn.showsTouchWhenHighlighted = true
         btn.setBackgroundImage(UIImage(named:"播放"), for: .normal)
-       
+        btn.addTarget(self, action: #selector(preview(_:)), for: .touchUpInside)
         return btn
         
     }()
-    
+    func   preview(_ sender:UIButton){
+        if   delegate != nil &&  (delegate?.responds(to: #selector(DetailcellProDelegate.DidClickpreview(_:))))!
+        {
+            
+            delegate!.DidClickpreview!(self.itemmodel!)
+            
+            
+        }
+        
+        
+        
+    }
     
     // 是否高清
     lazy var  lblhd:UILabel = {
@@ -155,7 +173,7 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
         
         
         alab.textColor = UIColor.gray
-        alab.font = UIFont.systemFont(ofSize: 12)
+        alab.font = UIFont.systemFont(ofSize: 10)
         alab.textAlignment = .left
         return  alab
     }()
@@ -177,7 +195,7 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
         
         
         alab.textColor = UIColor.gray
-        alab.font = UIFont.systemFont(ofSize: 12)
+        alab.font = UIFont.systemFont(ofSize: 10)
         alab.textAlignment = .left
         return  alab
     }()
@@ -200,7 +218,7 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
         
         
         alab.textColor = UIColor.gray
-        alab.font = UIFont.systemFont(ofSize: 12)
+        alab.font = UIFont.systemFont(ofSize: 10)
         alab.textAlignment = .left
         return  alab
     }()
@@ -230,21 +248,25 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
         
         let    imgview = UIImageView()
         imgview.isUserInteractionEnabled = true
-        imgview.contentMode = .scaleAspectFit
+        imgview.contentMode = .scaleToFill
         
         return  imgview
         
         
     }()
-    
-    lazy   var  tvview:BMPlayer  = {
-           let   tvvw = BMPlayer()
+    lazy  var   btndownload:UIButton = {
+        let   btn  =  UIButton()
+        btn.showsTouchWhenHighlighted = true
+        btn.tag = 1000 //1000未收藏  10001 收藏
+        btn.setTitle("下载", for: .normal)
+        btn.backgroundColor = UIColor.gray
+        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         
-            
-        
-           return   tvvw
+        return  btn
         
     }()
+    
     
     lazy  var   btncollect:UIButton = {
         let   btn  =  UIButton()
@@ -266,6 +288,7 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
     
     
     weak   var   itemmodel:LLCategoryRecItem? = LLCategoryRecItem()
+    
     override   init(frame:CGRect){
         
         
@@ -273,9 +296,9 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
          contentView.addSubview(scrollerview)
         scrollerview.snp.makeConstraints { (maker) in
-            maker.width.equalTo(contentView.width)
+            maker.width.equalTo(self.width)
             
-            maker.height.equalTo(contentView)
+            maker.height.equalTo(self.height)
             
              maker.left.equalTo(0)
             
@@ -304,9 +327,10 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
         scrollerview.addSubview(lblcasttxt)
         scrollerview.addSubview(lbldirectxt)
         scrollerview.addSubview(scoreimg)
+         scrollerview.addSubview(btndownload)
         scrollerview.addSubview(btncollect)
         btncollect.addTarget(self, action: #selector(collection), for: .touchUpInside)
-    
+       btndownload.addTarget(self, action: #selector(download), for: .touchUpInside)
         initalframe()
         //
         
@@ -315,8 +339,8 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
         
         
     }
-    
-    func   collection(){
+    func  download(){
+        
         if  itemmodel == nil  {
             return
         }
@@ -327,14 +351,80 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        var    aset =  curuser?.collectionitems
+        if   LLDownMovieItems.share.addmovieitem(self.itemmodel!){
+            let    animationimg  = UIImageView(image: itemimg.image)
+            contentView.addSubview(animationimg)
+            animationimg.snp.makeConstraints { (maker) in
+                maker.size.equalTo(itemimg).multipliedBy(208.0/300.0)
+                maker.center.equalTo(itemimg)
+            }
+            animationimg.cubeAnimate()
+            
+            
+            
+        }
+        else{
+            
+            _  = SweetAlert().showAlert("已添加至下载列表")
+            
+        }
         
-        aset?.insert(itemmodel!)
-        _  = SweetAlert().showAlert("添加成功")
         
-        curuser?.userobjid({ (str) in
-            print(str)
-        })
+    }
+    
+    
+    func   collection(){
+        
+        if  itemmodel == nil  {
+            return
+        }
+        //点击时  将
+        let   curuser =     LLCurrentUser.currentuser.user
+        if   curuser == nil {
+            _  = SweetAlert().showAlert("尚未登录")
+            return
+        }
+        itemmodel?.iscollected = true
+        let   amanager = LLCollectListManager.share
+        
+        weak var  tmp = self
+        amanager.additem(false,itemmodel!) { (su, err) in
+            
+            
+            if  err != nil &&  (err?.localizedDescription.contains("unique"))!{
+                
+                amanager.updateitem((tmp?.itemmodel)!, { (su, err) in
+                    
+                    if  su {
+                        
+                        _  = SweetAlert().showAlert("该项已经收藏")
+                        
+                    }
+                 
+                    
+                    
+                })
+                
+                
+                
+                return
+            }
+            if  err  == nil &&  su {
+                _  = SweetAlert().showAlert("收藏成功")
+                return
+            }
+            if  su == false{
+                _  = SweetAlert().showAlert("收藏失败")
+                return
+            }
+            
+            
+        }
+        
+
+        
+        
+        
         
         
         
@@ -363,8 +453,12 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
         else{
             scoreimg.image = UIImage(named:"little")
         }
+        if   item.item_isHd == nil {
+             lblhd.text = ""
+        }
+        else{
         lblhd.text = item.item_isHd == "0" ? "高清":""
-        
+        }
         
         
         
@@ -524,6 +618,16 @@ class LLDetailCollectionViewCell: UICollectionViewCell {
             
             
         }
+        btndownload.snp.makeConstraints { (maker) in
+            maker.top.equalTo( imgheight + 2 * toppadding)
+            maker.width.equalTo(60)
+            
+            maker.height.equalTo(30)
+            maker.left.equalTo(ScreenWidth - 65 - 75)
+            
+            
+        }
+        
         
        
    

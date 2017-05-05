@@ -12,12 +12,12 @@ class LLTVListViewController: BaseViewController {
     let  cellid = "myCell"
     lazy  var   infotitleView :IndexTittleView =  {
     let titleView = IndexTittleView.shareview()
-    titleView.backgroundColor = normalcolor
+    titleView.backgroundColor = UIColor.clear
     titleView.layer.cornerRadius = 5
     titleView.frame = CGRect(x:0,y:0, width:250,height:30)
         return titleView
     }()
-    
+     
     var   weathinfo:LLWeatherInfo!
     
     var    tableview:LLBaseTableView!
@@ -31,12 +31,13 @@ class LLTVListViewController: BaseViewController {
       func  headRefresh(){
         
         
-
-      
-      
-        var   finish = false
+     
         
-      LLAuthManager.Authorizon(opentvurl,   datablock: { (data) in
+       
+      
+      var   finish = false
+        
+      LLAuthManager.Authorizon(opentvurl, .get , datablock: { (data) in
             unowned let  tmp  = self
             
         
@@ -56,7 +57,6 @@ class LLTVListViewController: BaseViewController {
                  tmp.tableview.mj_header.endRefreshing()
                  tmp.tableview.reloadData()
                 
-
                     
                 }
             })
@@ -112,18 +112,38 @@ class LLTVListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
+    
+        
+        weak var   tmp = self
+        
+        manager.listener = { status in
+            
+            if status == NetworkReachabilityManager.NetworkReachabilityStatus.notReachable {
+                     _ =  SweetAlert().showAlert("网路怕是不对哦")
+            }
+            
+            if status == NetworkReachabilityManager.NetworkReachabilityStatus.unknown {
+                 _ =  SweetAlert().showAlert("网路怕是不对哦")
+                
+            }
+            if  status ==  NetworkReachabilityManager.NetworkReachabilityStatus.reachable(.wwan){
+                
+                
+                _ =  SweetAlert().showAlert("你正在使用流量播放")
+                
+              
+                
+                
+            }
+              tmp?.headRefresh()
+            
+        }
+        
         //  左上角   扫一扫
         buildNavigationItem()
    
         //  本月最新
-        
-        LLWeatherInfo.getweather {[weak self] (model) in
-            if  model != nil {
-            self?.infotitleView.setinfo(model!)
-            }
-            
-        }
-        
+     
         
         
         tableview = LLBaseTableView(frame: CGRect.zero, style: .plain)
@@ -141,14 +161,27 @@ class LLTVListViewController: BaseViewController {
         
     }
 
-    
+    override func listenthenetworkchange() -> Bool {
+        return true
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        LLWeatherInfo.getweather {[weak self] (model) in
+            if  model != nil {
+                self?.infotitleView.setinfo(model!)
+            }
+            
+        }
+        
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
       
         tableview.snp.makeConstraints { (maker) in
             maker.width.equalTo(ScreenWidth)
-            maker.height.equalTo(ScreenHeight - kTabBarH - kNavigationBarH - kStatusBarH)
+            maker.height.equalTo(ScreenHeight - kTabBarH - kNavigationBarH )
             maker.left.equalTo(0)
             maker.top.equalTo(0)
         }

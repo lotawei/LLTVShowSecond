@@ -16,7 +16,7 @@ class LLAcountViewController: BaseViewController {
    //  marking－warning   循环引用
     let   accoutlistdata =  [
         [["info":"我的消息","icon":"message","isdefault":"default"]],
-        [ ["info":"升级会员","icon":"VIP","isdefault":"default"],
+        [ ["info":"下载的视频","icon":"VIP","isdefault":"default"],
           ["info":"猜你喜欢","icon":"intersting","isdefault":"default"],
           ["info":"主题皮肤","icon":"skin","isdefault":"default"]
         ],
@@ -45,18 +45,18 @@ class LLAcountViewController: BaseViewController {
         return   UIView()
     }()
     //
-    lazy var   btnlogin:UIButton = {
-        let  btn = UIButton()
-        btn.backgroundColor = fontcolor
+    lazy var   btnlogin:LLBaseButton = {
+        let  btn = LLBaseButton()
+       
         btn.setTitle("登录", for: .normal)
         btn.addTarget(self, action: #selector(LLAcountViewController.login), for: .touchUpInside)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         return  btn
     }()
     //
-    lazy var   btnregister:UIButton = {
-        let  abtn = UIButton()
-        abtn.backgroundColor = fontcolor
+    lazy var   btnregister:LLBaseButton = {
+        let  abtn = LLBaseButton()
+       
         abtn.setTitle("注册", for: .normal)
         abtn.addTarget(self, action: #selector(LLAcountViewController.register), for: .touchUpInside)
         abtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
@@ -66,7 +66,7 @@ class LLAcountViewController: BaseViewController {
     //头像
     lazy  var  portraitimg:UIImageView = {
         let  img = UIImageView()
-        img.backgroundColor = UIColor.black
+       
         img.isUserInteractionEnabled  =  true
         let  atapgesture = UITapGestureRecognizer(target: self, action: #selector(LLAcountViewController.changeportrait))
         img.clipsToBounds = true
@@ -76,12 +76,12 @@ class LLAcountViewController: BaseViewController {
         return  img
     }()
     //退出按钮
-    lazy   var   btnlogout:UIButton = {
+    lazy   var   btnlogout:LLBaseButton = {
         
-        let  logout  = UIButton()
+        let  logout  = LLBaseButton()
         logout.setTitle("退出", for: .normal)
         logout.titleLabel?.font = UIFont.systemFont(ofSize: 11)
-        logout.backgroundColor = fontcolor
+      
         logout.addTarget(self, action: #selector(LLAcountViewController.logout), for: .touchUpInside)
         
         BmobUser.logout()
@@ -127,7 +127,7 @@ class LLAcountViewController: BaseViewController {
         }
         headview.snp.makeConstraints { (maker) in
             maker.top.equalTo(0)
-            maker.width.equalTo(ScreenWidth)
+            maker.width.equalTo(view)
             maker.height.equalTo(200)
         }
         btnlogout.snp.makeConstraints { (maker) in
@@ -153,7 +153,7 @@ class LLAcountViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.init(patternImage: UIImage(named:"background")!)
         navigationController?.delegate = self
         initialview()
         initalframe()
@@ -186,6 +186,7 @@ class LLAcountViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
         updateview()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -198,14 +199,15 @@ class LLAcountViewController: BaseViewController {
         //无用户
         let   auser = LLCurrentUser.currentuser.user
         var   porimg:UIImage!
-        
-        
         if  auser  != nil &&   (auser?.alreadysetportrait())!{
             let    imgpath = auser?.portrait
             porimg  =  UIImage(contentsOfFile: imgpath!)
         }
         else  if  auser == nil {
             porimg  =  UIImage(named: "default")
+            
+            
+            
         }
         else{
             porimg  =  UIImage(named: (auser?.portrait)!)
@@ -223,12 +225,30 @@ class LLAcountViewController: BaseViewController {
             btnlogout.isHidden = true
         }
         portraitimg.image =  porimg
+        
+        if    LLCurrentUser.currentuser.user != nil {
+            infoview.lblwatched.text  = String(  LLCollectListManager.share.watcheditems.count)
+            
+            infoview.lblcollected.text =  String(  LLCollectListManager.share.collectionitems.count)
+            
+            
+        }
+        else{
+            infoview.lblwatched.text  =   "未知"
+            
+            infoview.lblcollected.text =  "未知"
+
+        }
+        
+        
     }
    
     func initialview(){
         navigationController?.navigationBar.isHidden = true
         view.addSubview(headview)
-        headview.backgroundColor = UIColor.init(colorLiteralRed: 244/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 0.5)
+        
+        headview.backgroundColor = UIColor.white
+        
         headview.addSubview(btnlogin)
         headview.addSubview(btnregister)
         headview.addSubview(portraitimg)
@@ -266,6 +286,7 @@ class LLAcountViewController: BaseViewController {
     }
     func  logout(){
         LLCurrentUser.currentuser.user.cleanuser()
+//       cleancahe()
         //  主要是 更新的是 头部  以及 夜间模式的开关
         updateview()
         
@@ -308,9 +329,7 @@ class LLAcountViewController: BaseViewController {
                 
             }
         }))
-        alert.addAction(UIAlertAction(title: "软件提供", style: .default, handler: { (action) in
-            
-        }))
+       
         
         present(alert, animated: true, completion: nil)
         
@@ -379,6 +398,7 @@ extension  LLAcountViewController : UITableViewDelegate,UITableViewDataSource,UI
             
             cell = LLAccoutCell(style: .default, reuseIdentifier: "cell")
         }
+        cell?.backgroundColor = UIColor.clear
         //        cell?.textLabel?.text = accoutlistdata[indexPath.row]
         cell?.model = info
         return cell!
@@ -397,9 +417,9 @@ extension  LLAcountViewController : UITableViewDelegate,UITableViewDataSource,UI
         let   selectnname = info["info"]
         
         
-        let notificationName = Notification.Name(rawValue: "notifystyle")
+        let anotificationName = Notification.Name(rawValue: notificationName)
         let obj = trantonotifyname(selectnname!)
-        NotificationCenter.default.post(name: notificationName, object: obj,
+        NotificationCenter.default.post(name: anotificationName, object: obj,
                                         userInfo:nil)
         
     }
@@ -443,24 +463,82 @@ extension  LLAcountViewController : UITableViewDelegate,UITableViewDataSource,UI
         dismiss(animated: true, completion: nil)
         
     }
+    //  看过 收藏  资料
     
     func  selectindexitem(index:Int){
+        
+        if   LLCurrentUser.currentuser.user == nil {
+            _  = SweetAlert().showAlert("请先登录")
+            
+        }else{
+        
+            if  index == 2{
+                let  ctr = LLPrivateInfoViewController()
+                navigationController?.modalTransitionStyle = .partialCurl
+                navigationController?.pushViewController(ctr, animated: true)
+        }
+            else  if  index == 1{
+                let  ctr = LLCollectedViewController()
+                navigationController?.pushViewController(ctr, animated: true)
+        }
+            else  if  index == 0{
+                let  ctr = LLWatchedViewController()
+                navigationController?.pushViewController(ctr, animated: true)
+        }
+        }
+        
         
     }
     func  getnotify(_ notify:Notification){
         let  str  =  notify.object  as!  String
         switch str {
         case "我的消息":
-            _  = SweetAlert().showAlert(str)
+            if   LLCurrentUser.currentuser.user == nil {
+                _  = SweetAlert().showAlert("请先登录")
+                
+            }
+            else{
+                
+                navigationController?.pushViewController(LLUserMsgViewController(), animated: true)
+            }
             break;
-        case "升级会员":
-            _  = SweetAlert().showAlert(str)
+        case "下载的视频":
+            if   LLCurrentUser.currentuser.user == nil {
+                _  = SweetAlert().showAlert("请先登录")
+                
+            }
+            else{
+                
+                navigationController?.pushViewController(LLMovieDownViewController(), animated: true)
+            }
             break;
         case "主题皮肤":
-            _  = SweetAlert().showAlert(str)
+            if   LLCurrentUser.currentuser.user == nil {
+                _  = SweetAlert().showAlert("请先登录")
+                
+            }
+            else{
+                
+                navigationController?.pushViewController(LLThemeViewController(), animated: true)
+            }
             break;
         case "猜你喜欢":
-            _  = SweetAlert().showAlert(str)
+            if   LLCurrentUser.currentuser.user == nil {
+                _  = SweetAlert().showAlert("请先登录")
+                
+            }
+            else{
+                
+                if   LLCollectListManager.share.collectionitems.count >= 3 {
+                
+                
+                    navigationController?.pushViewController(LLPrefrenceViewController(), animated: true)
+                }
+                else{
+                    
+                     _  = SweetAlert().showAlert("收集用户数据太少无法推荐")
+                }
+            }
             break;
         case "反馈意见":
             if   LLCurrentUser.currentuser.user == nil {
@@ -477,17 +555,14 @@ extension  LLAcountViewController : UITableViewDelegate,UITableViewDataSource,UI
             cleancahe()
             break;
         case "关于":
+          
                 navigationController?.pushViewController(LLAboutViewController(), animated: true)
             
+            
             break;
-        case LLPOSDarkStyle:
-            _  = SweetAlert().showAlert(LLPOSDarkStyle)
-            break;
-        case LLPOSLightStyle:
-            _  = SweetAlert().showAlert(LLPOSLightStyle)
-            break;
-        default:
-            _  = SweetAlert().showAlert("nil")
+         default:
+            break
+//               _  = SweetAlert().showAlert("nil")
         }
         
         
@@ -499,9 +574,9 @@ extension  LLAcountViewController : UITableViewDelegate,UITableViewDataSource,UI
             
             return LLPOSTmsg
         }
-        if  str == "升级会员"{
+        if  str == "下载的视频"{
             
-            return LLPOSTLevelUpVip
+            return LLPOSTDownList
         }
         if  str == "主题皮肤"{
             

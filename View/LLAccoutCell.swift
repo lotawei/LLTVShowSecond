@@ -13,9 +13,9 @@ class LLAccoutCell: UITableViewCell {
     
     
     @IBOutlet weak var imgicon: UIImageView!
-    @IBOutlet weak var lblinfo: UILabel!
+    @IBOutlet weak var lblinfo: LLBaseLable!
     @IBOutlet weak var swtchange: UISwitch!
-    @IBOutlet weak var btnarrow: UIButton!
+    @IBOutlet weak var btnarrow: LLBaseButton!
     
     //  调用 .model 会调用此方法   message  icon  info
     var   model:[String:String]? = [:] {
@@ -37,29 +37,46 @@ class LLAccoutCell: UITableViewCell {
         selectionStyle = .none
         
         
+        
+      
         // 统一管理模式的效果
         
         swtchange.addTarget(self, action: #selector( LLAccoutCell.postchange(_:)), for: .valueChanged)
+        if LLCurrentUser.currentuser.user == nil {
+             swtchange.isOn  = false
+        }
+        else{
+        if  LLCurrentUser.currentuser.user.substyle == Substyle.dark{
         
+                swtchange.isOn  = true
+        }
+        else{
+            swtchange.isOn  = false
+
+        }
+        }
         
         
     }
     @objc private func postchange( _ slide:UISwitch){
+        
+        if  LLCurrentUser.currentuser.user != nil {
+        
         if slide.isOn{
             
-            let notificationName = Notification.Name(rawValue: "notifystyle")
-            NotificationCenter.default.post(name: notificationName, object: LLPOSDarkStyle,
+            let anotificationName = Notification.Name(rawValue: notificationName)
+            NotificationCenter.default.post(name: anotificationName, object: LLPOSDarkStyle,
                                             userInfo:nil)
             
         }
         else{
-            let notificationName = Notification.Name(rawValue: "notifystyle")
-            NotificationCenter.default.post(name: notificationName, object: LLPOSLightStyle,
+            let anotificationName = Notification.Name(rawValue: notificationName)
+            NotificationCenter.default.post(name: anotificationName, object: LLPOSLightStyle,
                                             userInfo:nil)
 
         }
         
-        
+        }
         
     }
     
@@ -97,9 +114,6 @@ class LLAccoutCell: UITableViewCell {
     }
     
 }
-
-
-// 扩展
 
 
 

@@ -55,9 +55,7 @@ class LLRevertMsg: BmobObject {
         bmobquery?.order(byDescending: "createdAt")
         bmobquery?.findObjectsInBackground({ (msgs, err) in
             if   err != nil {
-                
                 result(nil)
-                
             }
             else{
                 
@@ -69,11 +67,7 @@ class LLRevertMsg: BmobObject {
                     let  amsg  =   LLRevertMsg.msgwithobj(msg)
                     
                     let  lay = LLRevertLayout.init(amsg)
-                    
                     newmsgs.append(lay)
-                    
-                    
-                    
                 }
                 
                 result(newmsgs)
@@ -84,10 +78,46 @@ class LLRevertMsg: BmobObject {
             
         })
         
-        
-        
+    }
+    //
+    static   func   getallpermsgs(_ result:@escaping RevertBlock) {
+        let    bmobquery = BmobQuery(className: "FeedBack")
+        bmobquery?.order(byDescending: "createdAt")
+        bmobquery?.findObjectsInBackground({ (msgs, err) in
+            if   err != nil {
+                result(nil)
+            }
+            else{
+                
+                var  newmsgs = [LLRevertLayout]()
+                
+                for   obj in msgs!{
+                    
+                    
+                    
+                    let msg = obj as!  BmobObject
+                    let  amsg  =   LLRevertMsg.msgwithobj(msg)
+                    if  amsg.username == LLCurrentUser.currentuser.user.username{
+                        
+                        let  lay = LLRevertLayout.init(amsg)
+                        newmsgs.append(lay)
+                        
+                    }
+                    
+                    
+                 
+                }
+                
+                result(newmsgs)
+                
+            }
+            
+            
+            
+        })
         
     }
+
 
 
 }

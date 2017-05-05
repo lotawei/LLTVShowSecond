@@ -11,7 +11,7 @@ import AVFoundation
 
 //二维码
 class LLCodeScanViewController: BaseViewController , AVCaptureMetadataOutputObjectsDelegate{
-    private var titleLabel = UILabel()
+    private var titleLabel = LLBaseLable()
     private var captureSession: AVCaptureSession?
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     private var animationLineView = UIImageView()
@@ -20,9 +20,12 @@ class LLCodeScanViewController: BaseViewController , AVCaptureMetadataOutputObje
     
     
     private var   result:String?
-    
+    override func viewWillAppear(_ animated: Bool) {
+         view.backgroundColor = UIColor.white
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         buildNavigationItem()
         
         buildInputAVCaptureDevice()
@@ -54,7 +57,7 @@ class LLCodeScanViewController: BaseViewController , AVCaptureMetadataOutputObje
         titleLabel.text = "将视频二维码对准扫描即可添加到收藏"
         let input = try? AVCaptureDeviceInput(device: captureDevice)
         if input == nil {
-            titleLabel.text = "亲，只支持真机额"
+            titleLabel.text = "只支持真机额"
             
             return
         }
@@ -127,7 +130,7 @@ class LLCodeScanViewController: BaseViewController , AVCaptureMetadataOutputObje
     
     private func buildTransparentView(frame: CGRect) {
         let tView = UIView(frame: frame)
-        tView.backgroundColor = UIColor.black
+        tView.backgroundColor = UIColor.colorWithCustom(230, g: 230, b: 230)
         tView.alpha = 0.5
         view.addSubview(tView)
     }
@@ -153,6 +156,7 @@ class LLCodeScanViewController: BaseViewController , AVCaptureMetadataOutputObje
         animationLineView.frame = CGRect(x:ScreenWidth * 0.2 + ScreenWidth * 0.1 * 0.5, y:100, width:ScreenWidth * 0.5, height:2)
         UIView.animate(withDuration:4) { () -> Void in
             weakSelf!.animationLineView.frame.origin.y += ScreenWidth * 0.55
+             weakSelf!.animationLineView.alpha = 0.2
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -173,8 +177,12 @@ class LLCodeScanViewController: BaseViewController , AVCaptureMetadataOutputObje
             let metadataObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
             stringValue = metadataObject.stringValue
         }
+        else{
+            
+            stringValue = "nil"
+        }
         self.captureSession?.stopRunning()
-        print("code is \(stringValue)")
+         _ =  SweetAlert().showAlert("扫描结果－" + stringValue!)
         
         
         

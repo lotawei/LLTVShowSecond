@@ -31,6 +31,9 @@ open class YNSearchMainView: UIView {
         
         guard let categories = YNSearch.shared.getCategories() else { return }
         self.initView(categories: categories)
+      
+        
+        
     }
     
     required public init?(coder aDecoder: NSCoder) {

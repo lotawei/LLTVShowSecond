@@ -117,5 +117,29 @@ extension  YNSearch{
 //        return  nil
         
     }
+  static  func   firstload(){
+    
+    let   search  = YNSearch.shared
+    if  (search.pref.object(forKey: "isfirstload") == nil){
+        let   categories = ["速度与激情","奔跑吧","暴走大事件","人民的名义","魔兽","龙珠超","博人传","进击的巨人","画江湖之套路深"]
+        let   history:[String] = []
+        let   database =  ["速度与激情","奔跑吧","暴走大事件","人民的名义","龙珠"]
+        
+        search.setCategories(value: categories)
+         search.setDatabase(value: database)
+         search.setSearchHistories(value: history)
+        search.pref.set(true, forKey: "isfirstload")
+        
+    }
+    
+    
+        
+        
+        
+ }
+    
+    
+    
+    
     
 }

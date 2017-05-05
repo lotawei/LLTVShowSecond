@@ -78,9 +78,9 @@ class RevertCell: UITableViewCell {
         return imgview
         
     }()
-    lazy  var   lblusername:UILabel!   = {
+    lazy  var   lblusername:LLBaseLable!   = {
         
-        let  lab = UILabel()
+        let  lab = LLBaseLable()
         
         lab.font = UIFont.systemFont(ofSize: 13)
         lab.textAlignment = .left
@@ -89,9 +89,9 @@ class RevertCell: UITableViewCell {
         return  lab
         
     }()
-    lazy  var   lbltime:UILabel!   = {
+    lazy  var   lbltime:LLBaseLable!   = {
         
-        let  lab = UILabel()
+        let  lab = LLBaseLable()
         
         lab.font = UIFont.systemFont(ofSize: 13)
         lab.textAlignment = .left
@@ -102,11 +102,11 @@ class RevertCell: UITableViewCell {
     }()
    
     
-    lazy   var   textview:UILabel = {
+    lazy   var   textview:LLBaseLable = {
         
         
         
-        let  lab = UILabel()
+        let  lab = LLBaseLable()
         lab.font = UIFont.systemFont(ofSize: txtfont)
         lab.textAlignment = .left
         lab.textColor = UIColor.black
@@ -139,16 +139,16 @@ class RevertCell: UITableViewCell {
         return  btnphone
         
     }()
-    lazy   var   baselineview:UIView = {
-        
-        let   aview = UIView()
-        aview.backgroundColor = UIColor.init(colorLiteralRed: 149.0/255.0, green: 149.0/255.0, blue: 149.0/255.0, alpha: 1.0)
-        
-        
-        return aview
-        
-    }()
-    
+//    lazy   var   baselineview:UIView = {
+//        
+//        let   aview = UIView()
+//        aview.backgroundColor = UIColor.init(colorLiteralRed: 149.0/255.0, green: 149.0/255.0, blue: 149.0/255.0, alpha: 1.0)
+//        
+//        
+//        return aview
+//        
+//    }()
+//    
     
     
     
@@ -163,6 +163,8 @@ class RevertCell: UITableViewCell {
     
    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
+        contentView.backgroundColor = tablelightcolor
         contentView.autoresizesSubviews = false
         contentView.addSubview(imgusertype)
         contentView.addSubview(lblusername)
@@ -170,12 +172,14 @@ class RevertCell: UITableViewCell {
         contentView.addSubview(textview)
         contentView.addSubview(btnphone)
         contentView.addSubview(lblphone)
-        contentView.addSubview(baselineview)
+//        contentView.addSubview(baselineview)
     
     }
     
     
     func  setrevert(_ layout:LLRevertLayout){
+        lblphone.isHidden = false
+        btnphone.isHidden = false
         revertlay = layout
         self.height = layout.cellheight
         lblusername.text =  layout.revertmsg.username
@@ -201,15 +205,21 @@ class RevertCell: UITableViewCell {
                 
             }
         }
-        baselineview.snp.makeConstraints({ (maker) in
-        
-        maker.height.equalTo(1)
-        maker.width.equalTo(ScreenWidth)
-        maker.top.equalTo(self.height - 1)
-        maker.left.equalTo(0)
-        
-        
-        })//        setNeedsLayout()
+        else{
+             lblphone.isHidden = true
+            btnphone.isHidden = true
+
+            
+        }
+//        baselineview.snp.makeConstraints({ (maker) in
+//        
+//        maker.height.equalTo(1)
+//        maker.width.equalTo(ScreenWidth)
+//        maker.top.equalTo(self.height - 1)
+//        maker.left.equalTo(0)
+//        
+//        
+//        })//        setNeedsLayout()
         
     }
     override func layoutSubviews() {
@@ -223,7 +233,7 @@ class RevertCell: UITableViewCell {
         }
         lblusername.snp.makeConstraints { (maker) in
             maker.height.equalTo(20)
-            maker.width.equalTo(20)
+            maker.width.equalTo(250)
             maker.top.equalTo(toppading)
             maker.left.equalTo(60)
             

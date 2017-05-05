@@ -9,8 +9,12 @@
 import UIKit
 
 class LLMainTabarController: LLAnimationTabBarController,UITabBarControllerDelegate {
+    
+    var  bouceanimation = RAMBounceAnimation()
   fileprivate  var  isfirstLoadMaintabarcontroller : Bool =   true
     override func viewDidLoad() {
+     NOTIfyCenter.addObserver(self, selector: #selector(LLMainTabarController.basegetnotify(_:)), name: NSNotification.Name(rawValue: notificationName), object: nil)
+        
         delegate = self
         buildMainTabarChildViewController()
     }
@@ -20,10 +24,10 @@ class LLMainTabarController: LLAnimationTabBarController,UITabBarControllerDeleg
         tabBarControllerAddChildViewController(LLAcountViewController() , title: "我的", imagename: "MyAcount_normal", selectimagename: "MyAcount_select", tag: 1)
        
         
-        
+        selectedIndex = 0 
     }
     override  func viewDidAppear(_ animated: Bool) {
-     
+        
         if isfirstLoadMaintabarcontroller {
             let   containers = createViewContainers()
             createCustomIcons(containers)
@@ -31,7 +35,57 @@ class LLMainTabarController: LLAnimationTabBarController,UITabBarControllerDeleg
         }
     }
     
-
+    
+    func  basegetnotify(_ notify:Notification){
+        let  str  =  notify.object  as!  String
+        switch str {
+            
+        case LLPOSDarkStyle:
+           
+            curcolor()
+            
+            break;
+        case LLPOSLightStyle:
+            curcolor()
+            
+            
+            break;
+        case  LLPOSEyeStyle:
+          
+            curcolor()
+            
+            break;
+        default:
+            break;
+        }
+        
+        
+    }
+    deinit {
+            NOTIfyCenter.removeObserver(self, name: NSNotification.Name(rawValue: notificationName), object: nil)
+        }
+    
+    func  curcolor()->UIColor{
+        
+          
+        
+        if  LLCurrentUser.currentuser.user != nil {
+            
+            if   LLCurrentUser.currentuser.user.substyle.rawValue == 0 {
+               return fontcolor
+            }
+            else if  LLCurrentUser.currentuser.user.substyle.rawValue == 1{
+                return  UIColor.black
+            }
+            else if  LLCurrentUser.currentuser.user.substyle.rawValue == 1{
+                return   UIColor.blue
+            }
+            
+        }
+        return  fontcolor
+        
+        
+    }
     
 }
 extension   LLMainTabarController{
@@ -48,7 +102,11 @@ extension   LLMainTabarController{
          *  @return   有旋转  弹跳  翻转
          */
         
-        vcItem.animation = RAMBounceAnimation()
+      
+        
+        bouceanimation.textSelectedColor  = curcolor()
+        vcItem.animation = bouceanimation
+        
         childView.tabBarItem = vcItem
         
         let navigationVC = BaseNaVgationController(rootViewController:childView)

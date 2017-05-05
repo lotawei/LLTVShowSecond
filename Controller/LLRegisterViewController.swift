@@ -91,6 +91,7 @@ class LLRegisterViewController: BaseViewController ,LTMorphingLabelDelegate {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.navigationBar.isHidden = false
         titleView.text  = "注册"
         initview()
@@ -99,7 +100,7 @@ class LLRegisterViewController: BaseViewController ,LTMorphingLabelDelegate {
     
      func  initview(){
       
-        view.backgroundColor =  normalcolor
+        
         navigationItem.title = "注册"
         let dict:NSDictionary = [NSForegroundColorAttributeName: fontcolor,NSFontAttributeName : UIFont.boldSystemFont(ofSize: 17)]
         //标题颜色
@@ -197,9 +198,11 @@ class LLRegisterViewController: BaseViewController ,LTMorphingLabelDelegate {
         anewuser?.setObject(pwd, forKey: "password")
         anewuser?.setObject(0, forKey: "usertype")
          anewuser?.setObject(0, forKey: "stylenumber")
+          anewuser?.setObject(0, forKey: "substyle")
          anewuser?.setObject("default", forKey: "portrait")
         
         valid  = true
+        
         
         anewuser?.saveInBackground { (success, err) in
             if let err  = err as?  NSError{
@@ -222,7 +225,12 @@ class LLRegisterViewController: BaseViewController ,LTMorphingLabelDelegate {
         
         if   valid{
         // 将其用户信息存起来
+            
+            
+            
         let   auser = LLUser(randomusername, Usertype.normal, "default", Substyle.normal, isfirst: "yes")
+            //  注册暂时拿不到 ID
+            auser.objectid = "H0IEKEEK"
                _ =  auser.saveuser()
         }
     }

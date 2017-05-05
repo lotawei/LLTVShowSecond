@@ -22,7 +22,7 @@
                         <constraint firstAttribute="height" constant="15" id="aTR-1M-cQe"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sr-YV-mNy">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sr-YV-mNy" customClass="LLBaseLable" customModule="LLTVShow" customModuleProvider="target">
                     <rect key="frame" x="12" y="8" width="45" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="45" id="Yau-8p-mWa"/>

@@ -9,6 +9,8 @@
 import UIKit
 @objc protocol ItemViewProDelegate:NSObjectProtocol {
     @objc optional func   DidClickItemCell(_  type:String,_ item:[LLCategoryRecItem],_ selectindex:IndexPath)
+    
+    
 }
 
 
@@ -33,13 +35,13 @@ class LLCategoryCell: UITableViewCell, UICollectionViewDelegate, UICollectionVie
         img.isUserInteractionEnabled  =  true
         return img
     }()
-    lazy  var   categorytitle:UILabel!   = {
+    lazy  var   categorytitle:LLBaseLable!   = {
         
-       let  lab = UILabel()
+       let  lab = LLBaseLable()
       
         lab.font = UIFont.systemFont(ofSize: 14)
         lab.textAlignment = .left
-        lab.textColor = fontcolor
+//        lab.textColor = fontcolor
         
         
         
@@ -54,7 +56,7 @@ class LLCategoryCell: UITableViewCell, UICollectionViewDelegate, UICollectionVie
         
         layout.itemSize = CGSize(width: ScreenWidth, height: ScreenWidth)
         let      collectionView = LLBaseCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = UIColor.clear
         collectionView.bounces = false
         collectionView.showsHorizontalScrollIndicator = false
 
@@ -122,7 +124,7 @@ class LLCategoryCell: UITableViewCell, UICollectionViewDelegate, UICollectionVie
         
         
         
-        categoryimg.kf.setImage(with: URL(string:category.iconurl) , placeholder: UIImage(named:"palcehold"), options: nil, progressBlock: nil, completionHandler: nil)
+        categoryimg.kf.setImage(with: URL(string:category.iconurl) , placeholder: UIImage(named:"palcehold"), options:  [KingfisherOptionsInfoItem.transition(ImageTransition.fade(1)), KingfisherOptionsInfoItem.forceRefresh], progressBlock: nil, completionHandler: nil)
         categorytitle.text = curcategry.title
         
         //  这里就是拿到过后  movieitem
@@ -138,7 +140,7 @@ class LLCategoryCell: UITableViewCell, UICollectionViewDelegate, UICollectionVie
             itemurl = "http://open.moretv.com.cn/position/comic"
         }
             unowned   let  tmp = self
-            _  =  LLAuthManager.Authorizon(itemurl, datablock: { (data) in
+            _  =  LLAuthManager.Authorizon(itemurl, .get,datablock: { (data) in
              
              LLCategoryRecItem.GetMovieItems( data, { (items) in
                 tmp.recitems = items

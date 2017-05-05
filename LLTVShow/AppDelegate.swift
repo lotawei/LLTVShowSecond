@@ -12,14 +12,20 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var  managers:[LLDownMovieMananger] = [LLDownMovieMananger]()
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print(userAccountPath)
+        
+        
+        
+        swizzlingMethod(clzz: BaseNaVgationController.self,#selector(BaseNaVgationController.viewDidLoad), #selector(BaseNaVgationController.viewDidLoadForChangeTitleColor))
+        
         //  注册bmob的使用
         Bmob.register(withAppKey: bmobappkey)
         //  注册社交分享
         registershare()
-//        ShareSDK.registerApp("95e0641eb6ed91a5a5a1e86ae12fd5e6", activePlatforms: <#T##[Any]!#>, onImport: <#T##SSDKImportHandler!##SSDKImportHandler!##(SSDKPlatformType) -> Void#>, onConfiguration: <#T##SSDKConfigurationHandler!##SSDKConfigurationHandler!##(SSDKPlatformType, NSMutableDictionary?) -> Void#>)
+        
         
         
         
@@ -28,12 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        let locuser = LLCurrentUser.currentuser.user ?? nil
             //  分权限管理的话   是管理员 直有一个界面
         if  locuser != nil && locuser?.usertype.rawValue == Usertype.admin.rawValue {
+            
+            //  
+            
+            
                        let  nav = BaseNaVgationController(rootViewController: LLAdminViewController())
                          window?.rootViewController = nav
                 UIApplication.shared.delegate?.window??.makeKeyAndVisible()
             }
         else{
-                
+                let   ahelper = LLSqlLiteHelper.share
+                ahelper.query()
                 UIApplication.shared.delegate?.window??.rootViewController  = LLMainTabarController()
                 UIApplication.shared.delegate?.window??.makeKeyAndVisible()
             }
@@ -56,10 +67,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        print("进入后台")
+        
+       
+
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        //更新数据库最新情况
+        LLSqlLiteHelper.share.query()
+        
+        
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -69,6 +90,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    func swizzlingMethod(clzz: AnyClass,  _ oldSelector: Selector, _ newSelector: Selector) {
+        let oldMethod = class_getInstanceMethod(clzz, oldSelector)
+        let newMethod = class_getInstanceMethod(clzz, newSelector)
+        method_exchangeImplementations(oldMethod, newMethod)
+    }
+    
+    
     func   registershare(){
         ShareSDK.registerApp("18263c6d92c9a", activePlatforms: [SSDKPlatformType.typeSinaWeibo.rawValue,
                                                                 SSDKPlatformType.typeTencentWeibo.rawValue,

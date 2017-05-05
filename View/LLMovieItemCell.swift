@@ -7,19 +7,7 @@
 //
 
 import UIKit
-
-
-
-
-
 class LLMovieItemCell: UICollectionViewCell,LTMorphingLabelDelegate {
-    
-    
-    
-    
-    
-    
-    
     //上边距
     let  toppadding:CGFloat = 5
     
@@ -42,7 +30,7 @@ class LLMovieItemCell: UICollectionViewCell,LTMorphingLabelDelegate {
         
         let    imgview = UIImageView()
         imgview.isUserInteractionEnabled = true
-        imgview.contentMode = .scaleAspectFit
+        imgview.contentMode = .scaleToFill
         return  imgview
         
     }()
@@ -138,7 +126,7 @@ class LLMovieItemCell: UICollectionViewCell,LTMorphingLabelDelegate {
         
         
         alab.textColor = UIColor.gray
-        alab.font = UIFont.systemFont(ofSize: 12)
+        alab.font = UIFont.systemFont(ofSize: 10)
         alab.textAlignment = .left
         return  alab
     }()
@@ -160,7 +148,7 @@ class LLMovieItemCell: UICollectionViewCell,LTMorphingLabelDelegate {
         
         
         alab.textColor = UIColor.gray
-        alab.font = UIFont.systemFont(ofSize: 12)
+        alab.font = UIFont.systemFont(ofSize: 10)
         alab.textAlignment = .left
         return  alab
     }()
@@ -183,7 +171,7 @@ class LLMovieItemCell: UICollectionViewCell,LTMorphingLabelDelegate {
         
         
         alab.textColor = UIColor.gray
-        alab.font = UIFont.systemFont(ofSize: 12)
+        alab.font = UIFont.systemFont(ofSize: 10)
         alab.textAlignment = .left
         return  alab
     }()
@@ -203,7 +191,7 @@ class LLMovieItemCell: UICollectionViewCell,LTMorphingLabelDelegate {
         let  alab = UILabel()
         
         
-        alab.textColor = fontcolor
+//        alab.textColor = fontcolor
         alab.font = UIFont.systemFont(ofSize: 14)
         alab.textAlignment = .left
         return  alab
@@ -213,12 +201,25 @@ class LLMovieItemCell: UICollectionViewCell,LTMorphingLabelDelegate {
         
         let    imgview = UIImageView()
         imgview.isUserInteractionEnabled = true
-        imgview.contentMode = .scaleAspectFit
+        imgview.contentMode = .scaleToFill
         
         return  imgview
         
         
     }()
+    lazy  var   btndownload:UIButton = {
+        let   btn  =  UIButton()
+        btn.showsTouchWhenHighlighted = true
+        btn.tag = 1000 //1000未收藏  10001 收藏
+        btn.setTitle("下载", for: .normal)
+        btn.backgroundColor = UIColor.gray
+        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        
+        return  btn
+        
+    }()
+    
     lazy  var   btncollect:UIButton = {
         let   btn  =  UIButton()
         btn.showsTouchWhenHighlighted = true
@@ -257,10 +258,11 @@ class LLMovieItemCell: UICollectionViewCell,LTMorphingLabelDelegate {
         contentView.addSubview(lblcasttxt)
         contentView.addSubview(lbldirectxt)
         contentView.addSubview(scoreimg)
+        contentView.addSubview(btndownload)
         contentView.addSubview(btncollect)
         
         btncollect.addTarget(self, action: #selector(collection), for: .touchUpInside)
-        
+        btndownload.addTarget(self, action: #selector(download), for: .touchUpInside)
         initalframe()
         //
         
@@ -269,34 +271,98 @@ class LLMovieItemCell: UICollectionViewCell,LTMorphingLabelDelegate {
         
         
     }
-    
-    func   collection(){
+    func  download(){
+        
+        
+        
         if  itemmodel == nil  {
             return
         }
         //点击时  将
+        itemmodel?.iscollected = true
         let   curuser =     LLCurrentUser.currentuser.user
         if   curuser == nil {
             _  = SweetAlert().showAlert("尚未登录")
             return
         }
         
-        var    aset =  curuser?.collectionitems
         
-        aset?.insert(itemmodel!)
-        _  = SweetAlert().showAlert("添加成功")
         
-        curuser?.userobjid({ (str) in
-            print(str)
-        })
+        if   LLDownMovieItems.share.addmovieitem(self.itemmodel!){
+            let    animationimg  = UIImageView(image: itemimg.image)
+            contentView.addSubview(animationimg)
+            animationimg.snp.makeConstraints { (maker) in
+                maker.size.equalTo(itemimg).multipliedBy(208.0/300.0)
+                maker.center.equalTo(itemimg)
+            }
+            animationimg.cubeAnimate()
+            LLDownMovieMananger.startitem(self.itemmodel!, nil)
+            
+            
+        }
+        else{
+      
+             _  = SweetAlert().showAlert("已添加至下载列表")
+            
+        }
+    
+    }
+    func   collection(){
+        if  itemmodel == nil  {
+            return
+        }
+        //点击时  将
+        itemmodel?.iscollected = true
+        let   curuser =     LLCurrentUser.currentuser.user
+        if   curuser == nil {
+            _  = SweetAlert().showAlert("尚未登录")
+            return
+        }
+        let   amanager = LLCollectListManager.share
+        weak var  tmp = self
+        amanager.additem(false,itemmodel!) { (su, err) in
+            
+            
+            if  err != nil &&  (err?.localizedDescription.contains("unique"))!{
+                
+                    amanager.updateitem((tmp?.itemmodel)!, { (su, err) in
+                        
+                        if  su {
+                            
+                            _  = SweetAlert().showAlert("该项已经收藏")
+                            
+                        }
+                        
+                        
+                        
+                    })
+                
+
+                
+                return
+            }
+            if  err  == nil &&  su {
+                _  = SweetAlert().showAlert("收藏成功")
+                return
+            }
+            if  su == false{
+                 _  = SweetAlert().showAlert("收藏失败")
+                return
+            }
+            
+            
+        }
+        
+        
         
         
         
     }
     
+    
     func   setitem(_ item:LLCategoryRecItem){
         itemmodel = item
-        itemimg.kf.setImage(with: URL(string:item.item_icon1) , placeholder: UIImage(named:"cellimgpalcehold"), options: nil, progressBlock: nil, completionHandler: nil)
+        itemimg.kf.setImage(with: URL(string:item.item_icon1) , placeholder: UIImage(named:"cellimgpalcehold"), options:  [KingfisherOptionsInfoItem.transition(ImageTransition.fade(1)), KingfisherOptionsInfoItem.forceRefresh], progressBlock: nil, completionHandler: nil)
         lblitemtitle.text = item.item_title
         lbldirectxt.text = item.displaydirector()
         lblcasttxt.text = item.displaycast()
@@ -455,6 +521,16 @@ class LLMovieItemCell: UICollectionViewCell,LTMorphingLabelDelegate {
             maker.width.equalTo(lblheight)
             maker.height.equalTo(lblheight)
         }
+        btndownload.snp.makeConstraints { (maker) in
+            maker.top.equalTo( imgheight + 2 * toppadding)
+            maker.width.equalTo(60)
+            
+            maker.height.equalTo(30)
+            maker.right.equalTo(-2*toppadding - 60  )
+            
+            
+        }
+        
         btncollect.snp.makeConstraints { (maker) in
             maker.top.equalTo( imgheight + 2 * toppadding)
             maker.width.equalTo(60)

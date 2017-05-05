@@ -125,6 +125,96 @@ extension String {
         return strSize.height
         
     }
+    static func getLabWidth(labelStr:String,font:UIFont,height:CGFloat) -> CGFloat {
+        
+        let statusLabelText: NSString = labelStr as NSString
+        
+        let size = CGSize(width:900, height:height)
+        
+        let dic = NSDictionary(object: font, forKey: NSFontAttributeName as NSCopying)
+        
+        let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [String : AnyObject], context:nil).size
+        
+        return strSize.width
+        
+    }
+    //汉字转拼音
+     static func transformToPinYin(str:String)->String{
+        let mutableString = NSMutableString(string: str)
+        CFStringTransform(mutableString, nil, kCFStringTransformToLatin, false)
+        CFStringTransform(mutableString, nil, kCFStringTransformStripDiacritics, false)
+        let string = String(mutableString)
+        return string.replacingOccurrences(of: " ", with: "")
+    }
+    //汉字编码
+    static  func  urlencodestr(_ str:String) -> String{
+        var   encodestr = str
+        
+        // let customAllowedSet =  CharacterSet.init(charactersIn: "`#%^{}\"[]|\\<> ").inverted
+        
+        encodestr =  encodestr.addingPercentEncoding(withAllowedCharacters:CharacterSet.urlHostAllowed)!
+        
+        
+        return   encodestr
+        
+        
+        
+    }
+    // 搜索结果对应表
+    func  trancode()-> String{
+         if   self == "动漫"{
+            return  "comickids"
+         }
+        if   self == "热门"{
+            return  "hot"
+        }
+        if   self == "电影tv"{
+            return  "movietv"
+        }
+        if   self == "mv"{
+            return  "mv"
+        }
+        if   self == "体育"{
+            return  "sports"
+        }
+        if   self == "综艺"{
+            return  "zongyi"
+        }
+       return  self
+        
+        
+    }
+    // 搜索结果对应表
+    func  tranname()-> String{
+        if   self == "comickids"{
+            return  "动漫"
+        }
+        if   self == "hot"{
+            return  "热门"
+        }
+        if   self == "movietv"{
+            return  "电影tv"
+        }
+        if   self == "mv"{
+            return  "mv"
+        }
+        if   self == "sports"{
+            return  "体育"
+        }
+        if   self == "zongyi"{
+            return  "综艺"
+        }
+        return  self
+        
+        
+    }
+    // 播放视频随机地址
+    static   func   gettvurl() -> String{
+        
+        let random = Int(arc4random_uniform(UInt32(urls.count)))
+        return urls[random]
+        
+    }
     
 }
 

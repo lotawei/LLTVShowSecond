@@ -18,8 +18,8 @@ protocol   LLUerInfoViewProDelegate {
 
 class LLUerInfoView: UIView {
     var   delegate:LLUerInfoViewProDelegate?
-    @IBOutlet weak var lblwatched: UILabel!
-    @IBOutlet weak var lblcollected: UILabel!
+    @IBOutlet weak var lblwatched: LLBaseLable!
+    @IBOutlet weak var lblcollected: LLBaseLable!
     
     
     //点击观看的
@@ -53,15 +53,22 @@ class LLUerInfoView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        if    LLCurrentUser.currentuser.user == nil {
+        if    LLCurrentUser.currentuser.user != nil {
+            lblwatched.text  = String(  LLCollectListManager.share.watcheditems.count) 
             
+            lblcollected.text =  String(  LLCollectListManager.share.collectionitems.count)
+
+            
+        }
+        else{
             lblwatched.text  = "0"
             
-            lblwatched.text = "0"
-            
+            lblcollected.text =  "0"
         }
         
     }
+    
+    
     
     
 }

@@ -13,6 +13,7 @@ open class YNSearchTextField: UITextField {
         super.init(frame: frame)
         
         self.initView()
+        
     }
     
     required public init?(coder aDecoder: NSCoder) {

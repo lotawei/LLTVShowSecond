@@ -9,13 +9,8 @@
 import UIKit
 
 class LLBaseTableView: UITableView {
-
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
-        
-        
-     
-        
         delaysContentTouches = false
         canCancelContentTouches = true
         separatorStyle = .none
@@ -31,8 +26,47 @@ class LLBaseTableView: UITableView {
                 }
             }
         }
-    }
+        if  LLCurrentUser.currentuser.user != nil {
+            if LLCurrentUser.currentuser.user.substyle == Substyle.dark{
+            
+             backgroundColor = tablebackcolor
+            }
+            else{
+                
+                backgroundColor = tablelightcolor
+
+            }
+        }
+        
+        
+        NOTIfyCenter.addObserver(self, selector: #selector(LLBaseTableView.basegetnotify(_:)), name: NSNotification.Name(rawValue: notificationName), object: nil)
     
+        
+        
+    }
+    func  basegetnotify(_ notify:Notification){
+        let  str  =  notify.object  as!  String
+        switch str {
+            
+        case LLPOSDarkStyle:
+            backgroundColor = tablebackcolor
+            break;
+        case LLPOSLightStyle:
+            backgroundColor = tablelightcolor
+            
+            break;
+        case  LLPOSEyeStyle:
+            backgroundColor = tableeyecolor
+            
+            break;
+        default:
+            break;
+        }
+        
+        
+        
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -44,6 +78,12 @@ class LLBaseTableView: UITableView {
         
         return super.touchesShouldCancel(in: view)
     }
-
+    deinit {
+        NOTIfyCenter.removeObserver(self, name: NSNotification.Name(rawValue: notificationName), object: nil)
+        NOTIfyCenter.removeObserver(self, name: NSNotification.Name(rawValue: notificationSelect), object: nil)
+        print("base释放")
+        
+        
+    }
 
 }

@@ -18,10 +18,10 @@ class IndexTittleView: UIView {
     }
     */
     var    model:LLWeatherInfo!
-    @IBOutlet weak var temp: UILabel!
-    @IBOutlet weak var area: UILabel!
+    @IBOutlet weak var temp: LLBaseLable!
+    @IBOutlet weak var area: LLBaseLable!
     @IBOutlet weak var weatherimg: UIImageView!
-    @IBOutlet weak var disc: UILabel!
+    @IBOutlet weak var disc: LLBaseLable!
     
     static    func   shareview() ->  IndexTittleView {
         

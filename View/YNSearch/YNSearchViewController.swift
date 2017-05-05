@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class YNSearchViewController: UIViewController, UITextFieldDelegate {
+ class YNSearchViewController: BaseViewController, UITextFieldDelegate {
     open var delegate: YNSearchDelegate? {
         didSet {
             self.ynSearchView.delegate = delegate

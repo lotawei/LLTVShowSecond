@@ -87,7 +87,16 @@ class LLLoginView: UIView {
                  let    portrait = curuser.object(forKey: "portrait") as! String
                  let    usertype = curuser.object(forKey: "usertype") as! Int
                  let    substyle = curuser.object(forKey: "substyle") as! Int
+                
                 let     locuser  = LLUser.init(name , Usertype(rawValue: usertype)! ,portrait, Substyle(rawValue: substyle)!, isfirst: "no")
+                
+                locuser.objectid = user?.objectId
+                
+               //  在这里 就需要 对 其收藏的列表 获取
+                
+                
+                
+                
                 if  (locuser.saveuser()){
                  //  分权限管理的话   是管理员 直有一个界面
                     if  locuser.usertype.rawValue == Usertype.admin.rawValue {

@@ -24,12 +24,8 @@ typealias   DataBlock = (_ data:DataResponse<Any>) -> Void
 class  LLAuthManager:NSObject{
     
     //    以逃逸闭包的方式传出去
-    
-    
-    
-    
     //默认 一个静态 方法
-    static   func  Authorizon(_ url:URLConvertible, datablock: DataBlock?) {
+    static   func  Authorizon(_ url:URLConvertible,_ method:HTTPMethod, datablock: DataBlock?) {
         request(Authcodeurl,method:.get, parameters: ["appid":appid])
             .responseJSON {  (aJSON) in
                 
@@ -43,7 +39,7 @@ class  LLAuthManager:NSObject{
                         //  获取token  appid   secrete   +  验证值
                         let  key = appid+"_"+scret+"_"+"\(authcode)"
                         var   md5key:String?
-                        // marking－warning  md5key  释放不了
+                        
                         md5key =    String.MD5(str:key)
                         
                         //下面闭包会对 md5key 强引用
@@ -55,11 +51,9 @@ class  LLAuthManager:NSObject{
                                     let   jsondata  = bJSON.result.value  as! [String:Any]
                                     let   strtoken =   jsondata["access_token"] as?  String
                                     
-                                    
-                                    
                                     if   strtoken != nil{
                                         
-                                        request(url,method:.get, parameters:["access_token":strtoken!])
+                                        request(url,method:method, parameters:["access_token":strtoken!])
                                             .responseJSON {  (cJSON) in
                                                 
                                                 
@@ -70,13 +64,13 @@ class  LLAuthManager:NSObject{
                                         
                                     }
                                     else{
-                                        print("获取token失败")
+                                       _ =  SweetAlert().showAlert("获取token失败")
                                         
                                     }
                                     
                                 }
                                 else{
-                                    print("你好像未连接网络")
+                                    _ =  SweetAlert().showAlert("你好像未连接网络")
                                 }
                                 
                                 
@@ -88,12 +82,12 @@ class  LLAuthManager:NSObject{
                     }
                     else{
                         
-                        print("服务器认证失败")
+                       _ =  SweetAlert().showAlert("服务器认证失败")
                         
                     }
                 }
                 else{
-                    print("你可能需要检查网络或设置允许数据")
+                    _ =  SweetAlert().showAlert("你好像未连接网络")
                 }
                 
                 

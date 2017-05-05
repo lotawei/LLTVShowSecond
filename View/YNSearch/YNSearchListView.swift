@@ -27,6 +27,8 @@ open class YNSearchListView: UITableView, UITableViewDelegate, UITableViewDataSo
         super.init(frame: frame, style: style)
         self.initView()
         self.initData()
+        separatorStyle = .none
+        backgroundColor = UIColor.init(patternImage: UIImage(named:"background")!)
         
     }
     
@@ -46,6 +48,7 @@ open class YNSearchListView: UITableView, UITableViewDelegate, UITableViewDataSo
 
         let cell = tableView.dequeueReusableCell(withIdentifier: YNSearchListViewCell.ID) as! YNSearchListViewCell
         cell.searchLabel.text = _database[indexPath.row]
+        cell.backgroundColor  = UIColor.clear
         return cell
     }
     

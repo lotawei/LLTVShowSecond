@@ -9,20 +9,24 @@
 import UIKit
 //  不同类型的内容推荐
 typealias MovieItemBlock = (_ result:[LLCategoryRecItem] ) -> Void
-class LLCategoryRecItem: NSObject {
-
+class LLCategoryRecItem: BmobObject {
     
-    var  iscollect:Bool = false
+    var perferencescore:Double = 0
     
+    var   collectuser:BmobObject!
+    var  downloadsuccess = false
+    
+    var  iswatched:Bool!
+    var  iscollected:Bool!
+    //  附带
+    var  erweicode:JSON!
+    var  tvurllink:String!
     var  item_director:[JSON]!//导演
     var   item_cast:[JSON]!//主演
     var   item_tag:[JSON]!//标签
     var   item_guest:[JSON]!
     var   item_host:[JSON]!
     var   item_area:String!//地区
-    
-    
-    
     var item_contentType:String!//影片类型
     var   item_score:String! //评分
     
@@ -36,22 +40,21 @@ class LLCategoryRecItem: NSObject {
     var   item_year:String!//年份
     var   item_title:String!//名称
     
-    
-    
+        
     func displaydirector() -> String{
         
         var   directors = ""
         for  str in item_director {
-           
-             directors.append(str.string!)
-             directors.append(" ")
+            
+            directors.append(str.string!)
+            directors.append(" ")
             
         }
         if  directors.characters.count == 0 {
             directors = "不详"
         }
         return  directors
-
+        
     }
     
     func displayallarea() -> String{
@@ -114,15 +117,13 @@ class LLCategoryRecItem: NSObject {
             
         }
         else {
-       
+            
             for  str in item_tag {
                 tags.append(" ")
                 tags.append(str.string!)
             }
             
         }
-        
-        
         return  tags
         
     }
@@ -150,8 +151,6 @@ class LLCategoryRecItem: NSObject {
             }
             
         }
-        
-        
         return  tags
         
     }
@@ -164,7 +163,7 @@ class LLCategoryRecItem: NSObject {
             
         }
         else {
-         
+            
             for  str in item_cast {
                 
                 casts.append(str.string!)
@@ -177,7 +176,14 @@ class LLCategoryRecItem: NSObject {
         return  casts
         
     }
-
+    func displaycontenttype() -> String{
+        
+        
+        
+        return  "没有写代码"
+        
+    }
+    
     func displaycast() -> String{
         var   casts = ""
         let   count  = item_cast.count
@@ -189,12 +195,12 @@ class LLCategoryRecItem: NSObject {
         else {
             var   i = 0
             for  str in item_cast {
-            
+                
                 casts.append(str.string!)
                 casts.append(" ")
                 i = i + 1
                 if   i >= 3 {
-                     casts.append("更多")
+                    casts.append("更多")
                     break
                 }
                 
@@ -202,7 +208,7 @@ class LLCategoryRecItem: NSObject {
             
         }
         
-    
+        
         return  casts
         
     }
@@ -259,56 +265,55 @@ class LLCategoryRecItem: NSObject {
     //    "item_title" : "魔兽",
     //    "item_area" : "美国 | 中国大陆 | 加拿大"
     //}
- 
+    
     static  func GetMovieItems(_ data:DataResponse<Any>,_ result:@escaping MovieItemBlock){
         
-    
-         let   jsondata  =  JSON(data: data.data!)
+        
+        let   jsondata  =  JSON(data: data.data!)
         var   recitems:[LLCategoryRecItem]?
-         recitems   = [LLCategoryRecItem]()
+        recitems   = [LLCategoryRecItem]()
         let   items = jsondata["position"]["positionItems"].array
         for  item in items!{
-                
+            
             var  aitem:LLCategoryRecItem?
-            aitem = LLCategoryRecItem()
+            aitem = LLCategoryRecItem(className: "LLCategoryRecItem")
             
-            
-                aitem!.item_tag = item["item_tag"].array
-                aitem!.item_area = item["item_area"].string
-                aitem!.item_cast = item["item_cast"].array
-                aitem!.item_director = item["item_director"].array
-            
-            
-
-                aitem!.item_guest = item["item_guest"].array
-                aitem!.item_host = item["item_host"].array
-                
-                aitem!.link_data = item["link_data"].string
-                aitem!.item_contentType = item["item_contentType"].string
-                aitem!.item_score = item["item_score"].string
-                aitem!.item_episode = item["item_episode"].string
-                aitem!.item_icon1 = item["item_icon1"].string
-                aitem!.item_year = item["item_year"].string == "0" ? "未知":item["item_year"].string
-                aitem!.item_isHd = item["item_isHd"].string
-                aitem!.item_title = item["item_title"].string
-                aitem?.iscollect = false
-                recitems!.append(aitem!)
+            aitem!.erweicode = item
+            aitem!.item_tag = item["item_tag"].array
+            aitem!.item_area = item["item_area"].string
+            aitem!.item_cast = item["item_cast"].array
+            aitem!.item_director = item["item_director"].array
             
             
             
-           }
+            aitem!.item_guest = item["item_guest"].array
+            aitem!.item_host = item["item_host"].array
             
+            aitem!.link_data = item["link_data"].string
+            aitem!.item_contentType = item["item_contentType"].string
+            aitem!.item_score = item["item_score"].string
+            aitem!.item_episode = item["item_episode"].string
+            aitem!.item_icon1 = item["item_icon1"].string
+            aitem!.item_year = item["item_year"].string == "0" ? "未知":item["item_year"].string
+            aitem!.item_isHd = item["item_isHd"].string
+            aitem?.tvurllink = String.gettvurl()
+            let   date = Date()
+             let  timline = String.stringWithTimelineDate(date)
+            aitem!.item_title = item["item_title"].string == nil ? timline:item["item_title"].string
             
-            
-            result(recitems!)
-            recitems = nil
-        
-        
-        
+           
+            recitems!.append(aitem!)
+        }
+        result(recitems!)
+        recitems = nil
         
     }
     
     
-    
-    
 }
+
+
+
+
+
+

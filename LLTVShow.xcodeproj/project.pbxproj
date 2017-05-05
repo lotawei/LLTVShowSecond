@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		ED1F2B0D1E974A4000C6B08A /* LLWeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F2B0C1E974A4000C6B08A /* LLWeatherInfo.swift */; };
 		ED266E8F1DF9941F0083E31F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED266E8E1DF9941F0083E31F /* Images.xcassets */; };
+		ED2F09901EB81A6800232448 /* LLDownMovieItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F098F1EB81A6800232448 /* LLDownMovieItems.swift */; };
+		ED2F09921EB82A1F00232448 /* LLMovieDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F09911EB82A1F00232448 /* LLMovieDownViewController.swift */; };
+		ED2F09941EB8323A00232448 /* DownItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F09931EB8323A00232448 /* DownItemCell.swift */; };
+		ED2F09961EB8325900232448 /* DownItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED2F09951EB8325900232448 /* DownItemCell.xib */; };
+		ED2F09981EB86F6700232448 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F09971EB86F6700232448 /* KYCircularProgress.swift */; };
+		ED2F09E51EB8E21500232448 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2F09D81EB8E20700232448 /* SQLite.framework */; };
+		ED2F09E71EB8E24A00232448 /* LLSQLiteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F09E61EB8E24A00232448 /* LLSQLiteHelper.swift */; };
+		ED30E8BC1EBAF6C90046AE82 /* LLPerfrenceCalutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30E8BB1EBAF6C90046AE82 /* LLPerfrenceCalutor.swift */; };
+		ED30E8C51EBB35190046AE82 /* LLUserMsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30E8C41EBB35190046AE82 /* LLUserMsgViewController.swift */; };
+		ED30E8C71EBB36B10046AE82 /* LLThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30E8C61EBB36B10046AE82 /* LLThemeViewController.swift */; };
+		ED30E8C91EBB37B80046AE82 /* LLPrefrenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30E8C81EBB37B80046AE82 /* LLPrefrenceViewController.swift */; };
+		ED30E8CD1EBB6E320046AE82 /* LLBaseLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30E8CC1EBB6E320046AE82 /* LLBaseLable.swift */; };
+		ED30E8CF1EBB7DB50046AE82 /* LLBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30E8CE1EBB7DB50046AE82 /* LLBaseButton.swift */; };
 		ED3DB52B1DEA8C490030B3BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DB52A1DEA8C490030B3BC /* AppDelegate.swift */; };
 		ED3DB5301DEA8C490030B3BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3DB52E1DEA8C490030B3BC /* Main.storyboard */; };
 		ED3DB5551DEA8D410030B3BC /* GlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DB5541DEA8D410030B3BC /* GlobalConfig.swift */; };
@@ -16,6 +29,12 @@
 		ED3DB55D1DEA9D040030B3BC /* UIViewextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DB55C1DEA9D040030B3BC /* UIViewextension.swift */; };
 		ED3DC5741E31E340008CA172 /* LLRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DC5731E31E340008CA172 /* LLRegisterViewController.swift */; };
 		ED3DC5791E31F3C3008CA172 /* ZYAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3DC5771E31F3C3008CA172 /* ZYAnimationLayer.m */; };
+		ED41FC781EB1B67200912F4C /* LLCollectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41FC771EB1B67200912F4C /* LLCollectItem.swift */; };
+		ED41FC7A1EB1BB5600912F4C /* LLCollectListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41FC791EB1BB5600912F4C /* LLCollectListManager.swift */; };
+		ED41FC7C1EB1CD8100912F4C /* LLCollectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41FC7B1EB1CD8100912F4C /* LLCollectedViewController.swift */; };
+		ED41FC7E1EB2115100912F4C /* LLWatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41FC7D1EB2115100912F4C /* LLWatchedViewController.swift */; };
+		ED41FC801EB2116A00912F4C /* LLPrivateInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41FC7F1EB2116A00912F4C /* LLPrivateInfoViewController.swift */; };
+		ED41FC821EB21BE000912F4C /* LLFullLandScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41FC811EB21BE000912F4C /* LLFullLandScreenViewController.swift */; };
 		ED420D511E4C4E7300C0EB4E /* LLBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED420D501E4C4E7300C0EB4E /* LLBaseTableView.swift */; };
 		ED420D531E4C4F0D00C0EB4E /* LLBaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED420D521E4C4F0D00C0EB4E /* LLBaseCollectionView.swift */; };
 		ED420D961E4C504F00C0EB4E /* LLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED420D951E4C504F00C0EB4E /* LLRefreshView.swift */; };
@@ -33,13 +52,11 @@
 		ED4356D41E765F9200D5C0B8 /* LLUerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4356D31E765F9200D5C0B8 /* LLUerInfoView.swift */; };
 		ED4356D91E767A2300D5C0B8 /* LLAccoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4356D71E767A2300D5C0B8 /* LLAccoutCell.swift */; };
 		ED4356DA1E767A2300D5C0B8 /* LLAccoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4356D81E767A2300D5C0B8 /* LLAccoutCell.xib */; };
-		ED4356FE1E76BF3000D5C0B8 /* LLTVCollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4356FD1E76BF3000D5C0B8 /* LLTVCollectionList.swift */; };
 		ED441D501E02812C00B84AD4 /* LLCurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED441D4F1E02812C00B84AD4 /* LLCurrentUser.swift */; };
 		ED4579E91E653E4200AA95CC /* LLAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4579E81E653E4200AA95CC /* LLAuthManager.swift */; };
 		ED4DA7EE1E98C3600079FCD4 /* LLCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4DA7ED1E98C3600079FCD4 /* LLCategoryCell.swift */; };
 		ED4DA7F21E98C8390079FCD4 /* LLMovieItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4DA7F11E98C8390079FCD4 /* LLMovieItemCell.swift */; };
 		ED4DA8071E98D32C0079FCD4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4DA8061E98D32C0079FCD4 /* SwiftyJSON.swift */; };
-		ED4E21CC1EA7800600444488 /* BMPlayerCustomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E21CB1EA7800600444488 /* BMPlayerCustomControlView.swift */; };
 		ED4E22131EA7AD1900444488 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4E22121EA7AD1900444488 /* libz.tbd */; };
 		ED4E22151EA7AD2A00444488 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4E22141EA7AD2A00444488 /* libstdc++.tbd */; };
 		ED4E22171EA7AD3300444488 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4E22161EA7AD3300444488 /* JavaScriptCore.framework */; };
@@ -72,6 +89,9 @@
 		ED6C413D1E9E5BCD0060D848 /* IndexTittleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED6C413C1E9E5BCD0060D848 /* IndexTittleView.xib */; };
 		ED6C413F1E9E5BE70060D848 /* IndexTittleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C413E1E9E5BE70060D848 /* IndexTittleView.swift */; };
 		ED741F7C1E6F9FC600CFE8BC /* LLThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED741F7B1E6F9FC600CFE8BC /* LLThemeManager.swift */; };
+		ED7D8CAD1EADCA5500CFBD95 /* LLResultHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D8CAC1EADCA5500CFBD95 /* LLResultHeadView.swift */; };
+		ED7D8DB11EAE0C5500CFBD95 /* LLSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D8DB01EAE0C5500CFBD95 /* LLSearchResult.swift */; };
+		ED7D8DB31EAE4F7000CFBD95 /* LLResultItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D8DB21EAE4F7000CFBD95 /* LLResultItemCell.swift */; };
 		ED8A9D011E2F5FEF001A2EC8 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A9CF51E2F5FEF001A2EC8 /* AkiraTextField.swift */; };
 		ED8A9D021E2F5FEF001A2EC8 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A9CF61E2F5FEF001A2EC8 /* HoshiTextField.swift */; };
 		ED8A9D031E2F5FEF001A2EC8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED8A9CF71E2F5FEF001A2EC8 /* Info.plist */; };
@@ -111,6 +131,7 @@
 		ED9307EF1E9FE2C5006E44FB /* LLRevertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9307EE1E9FE2C5006E44FB /* LLRevertViewController.swift */; };
 		ED9682A61E9F336D00D399E4 /* LLCodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9682A51E9F336D00D399E4 /* LLCodeScanViewController.swift */; };
 		EDA058681E63DAFC0086D564 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA058671E63DAFC0086D564 /* SweetAlert.swift */; };
+		EDA2E90E1EAF789F00FF3933 /* LLResultItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA2E90D1EAF789E00FF3933 /* LLResultItemCell.xib */; };
 		EDA402321E24D00C00E00CCE /* LLAnimationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA402311E24D00C00E00CCE /* LLAnimationTabBarController.swift */; };
 		EDAAFF631E778A5800EC8865 /* NVActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAAFF3C1E778A5800EC8865 /* NVActivityIndicatorAnimationAudioEqualizer.swift */; };
 		EDAAFF641E778A5800EC8865 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAAFF3D1E778A5800EC8865 /* NVActivityIndicatorAnimationBallBeat.swift */; };
@@ -150,7 +171,6 @@
 		EDAAFF861E778A5900EC8865 /* NVActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAAFF5F1E778A5800EC8865 /* NVActivityIndicatorShape.swift */; };
 		EDAAFF871E778A5900EC8865 /* NVActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAAFF611E778A5800EC8865 /* NVActivityIndicatorView.swift */; };
 		EDAAFF881E778A5900EC8865 /* NVActivityIndicatorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAAFF621E778A5800EC8865 /* NVActivityIndicatorViewable.swift */; };
-		EDAC7E381E9A2D09008AC53F /* LLMovieItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDAC7E371E9A2D09008AC53F /* LLMovieItemCell.xib */; };
 		EDB754281E6910B100E2C350 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB754271E6910B100E2C350 /* BmobSDK.framework */; };
 		EDB7542B1E6910F800E2C350 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB7542A1E6910F800E2C350 /* libc++.tbd */; };
 		EDB7542E1E69110200E2C350 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB7542C1E69110200E2C350 /* libsqlite3.0.tbd */; };
@@ -222,6 +242,8 @@
 		EDC18B071E55A6330026E4D2 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC18AF11E55A6330026E4D2 /* String+MD5.swift */; };
 		EDC18B081E55A6330026E4D2 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC18AF21E55A6330026E4D2 /* ThreadHelper.swift */; };
 		EDC18B091E55A6330026E4D2 /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC18AF31E55A6330026E4D2 /* UIButton+Kingfisher.swift */; };
+		EDCD0B5A1EB072F600399DBE /* SubtitleDemo.srt in Resources */ = {isa = PBXBuildFile; fileRef = EDCD0B591EB072F600399DBE /* SubtitleDemo.srt */; };
+		EDCD0B5E1EB0861400399DBE /* BMPlayerCustomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD0B5D1EB0861400399DBE /* BMPlayerCustomControlView.swift */; };
 		EDD3C2491E728B9F005E43D8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDD3C2351E728B9F005E43D8 /* Info.plist */; };
 		EDD3C24A1E728B9F005E43D8 /* LTCharacterDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD3C2361E728B9F005E43D8 /* LTCharacterDiffResult.swift */; };
 		EDD3C24B1E728B9F005E43D8 /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD3C2371E728B9F005E43D8 /* LTCharacterLimbo.swift */; };
@@ -240,6 +262,9 @@
 		EDD3C2581E728B9F005E43D8 /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD3C2461E728B9F005E43D8 /* Fragment.png */; };
 		EDD3C2591E728B9F005E43D8 /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD3C2471E728B9F005E43D8 /* Smoke.png */; };
 		EDD3C25A1E728B9F005E43D8 /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD3C2481E728B9F005E43D8 /* Sparkle.png */; };
+		EDD42AD81EB71B9900AADE01 /* LLRecommadItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD42AD71EB71B9900AADE01 /* LLRecommadItems.swift */; };
+		EDD42ADA1EB74A7100AADE01 /* LLDownMovieMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD42AD91EB74A7100AADE01 /* LLDownMovieMananger.swift */; };
+		EDD544441EB6395900A54433 /* BaseNavgationController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD544431EB6395900A54433 /* BaseNavgationController+extension.swift */; };
 		EDD813AF1E9692E300A9D6B2 /* LLCategoryRecItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD813AE1E9692E300A9D6B2 /* LLCategoryRecItem.swift */; };
 		EDDD54AF1E25EDDA00E3DC1F /* LLMainTabarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDD54AE1E25EDDA00E3DC1F /* LLMainTabarController.swift */; };
 		EDF00B541EA3479F0038DF3A /* LLRevertMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00B531EA3479F0038DF3A /* LLRevertMsg.swift */; };
@@ -290,21 +315,92 @@
 		EDF88B3D1E4D67C50034CAAF /* LLAcountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF88B3C1E4D67C50034CAAF /* LLAcountViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		ED2F09D71EB8E20700232448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED2F09CD1EB8E20700232448 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		ED2F09D91EB8E20700232448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED2F09CD1EB8E20700232448 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		ED2F09DB1EB8E20700232448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED2F09CD1EB8E20700232448 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		ED2F09DD1EB8E20700232448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED2F09CD1EB8E20700232448 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		ED2F09DF1EB8E20700232448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED2F09CD1EB8E20700232448 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		ED2F09E11EB8E20700232448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED2F09CD1EB8E20700232448 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		ED2F09E31EB8E20700232448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED2F09CD1EB8E20700232448 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		ED1F2B0C1E974A4000C6B08A /* LLWeatherInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLWeatherInfo.swift; sourceTree = "<group>"; };
 		ED266E8E1DF9941F0083E31F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ED2F098F1EB81A6800232448 /* LLDownMovieItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDownMovieItems.swift; sourceTree = "<group>"; };
+		ED2F09911EB82A1F00232448 /* LLMovieDownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMovieDownViewController.swift; sourceTree = "<group>"; };
+		ED2F09931EB8323A00232448 /* DownItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownItemCell.swift; sourceTree = "<group>"; };
+		ED2F09951EB8325900232448 /* DownItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownItemCell.xib; sourceTree = "<group>"; };
+		ED2F09971EB86F6700232448 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KYCircularProgress.swift; path = ../View/KYCircularProgress.swift; sourceTree = "<group>"; };
+		ED2F09CD1EB8E20700232448 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		ED2F09E61EB8E24A00232448 /* LLSQLiteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSQLiteHelper.swift; sourceTree = "<group>"; };
+		ED30E8BB1EBAF6C90046AE82 /* LLPerfrenceCalutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLPerfrenceCalutor.swift; sourceTree = "<group>"; };
+		ED30E8C41EBB35190046AE82 /* LLUserMsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLUserMsgViewController.swift; sourceTree = "<group>"; };
+		ED30E8C61EBB36B10046AE82 /* LLThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLThemeViewController.swift; sourceTree = "<group>"; };
+		ED30E8C81EBB37B80046AE82 /* LLPrefrenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLPrefrenceViewController.swift; sourceTree = "<group>"; };
+		ED30E8CC1EBB6E320046AE82 /* LLBaseLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBaseLable.swift; sourceTree = "<group>"; };
+		ED30E8CE1EBB7DB50046AE82 /* LLBaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBaseButton.swift; sourceTree = "<group>"; };
 		ED3DB5271DEA8C490030B3BC /* LLTVShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLTVShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3DB52A1DEA8C490030B3BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../LLTVShow/AppDelegate.swift; sourceTree = "<group>"; };
 		ED3DB52F1DEA8C490030B3BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED3DB5361DEA8C490030B3BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED3DB5541DEA8D410030B3BC /* GlobalConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConfig.swift; sourceTree = "<group>"; };
-		ED3DB5561DEA8D910030B3BC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		ED3DB5561DEA8D910030B3BC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ../Controller/BaseViewController.swift; sourceTree = "<group>"; };
 		ED3DB55C1DEA9D040030B3BC /* UIViewextension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewextension.swift; sourceTree = "<group>"; };
 		ED3DC5731E31E340008CA172 /* LLRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRegisterViewController.swift; sourceTree = "<group>"; };
 		ED3DC5761E31F3C3008CA172 /* ZYAnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAnimationLayer.h; sourceTree = "<group>"; };
 		ED3DC5771E31F3C3008CA172 /* ZYAnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAnimationLayer.m; sourceTree = "<group>"; };
-		ED420D501E4C4E7300C0EB4E /* LLBaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBaseTableView.swift; sourceTree = "<group>"; };
-		ED420D521E4C4F0D00C0EB4E /* LLBaseCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBaseCollectionView.swift; sourceTree = "<group>"; };
+		ED41FC771EB1B67200912F4C /* LLCollectItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCollectItem.swift; sourceTree = "<group>"; };
+		ED41FC791EB1BB5600912F4C /* LLCollectListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCollectListManager.swift; sourceTree = "<group>"; };
+		ED41FC7B1EB1CD8100912F4C /* LLCollectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCollectedViewController.swift; sourceTree = "<group>"; };
+		ED41FC7D1EB2115100912F4C /* LLWatchedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLWatchedViewController.swift; sourceTree = "<group>"; };
+		ED41FC7F1EB2116A00912F4C /* LLPrivateInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLPrivateInfoViewController.swift; sourceTree = "<group>"; };
+		ED41FC811EB21BE000912F4C /* LLFullLandScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLFullLandScreenViewController.swift; sourceTree = "<group>"; };
+		ED420D501E4C4E7300C0EB4E /* LLBaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LLBaseTableView.swift; path = ../View/LLBaseTableView.swift; sourceTree = "<group>"; };
+		ED420D521E4C4F0D00C0EB4E /* LLBaseCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LLBaseCollectionView.swift; path = ../View/LLBaseCollectionView.swift; sourceTree = "<group>"; };
 		ED420D951E4C504F00C0EB4E /* LLRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshView.swift; sourceTree = "<group>"; };
 		ED42B68C1E7A6098008FCCF3 /* LLContenCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLContenCategory.swift; sourceTree = "<group>"; };
 		ED42B68E1E7A6296008FCCF3 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
@@ -321,13 +417,11 @@
 		ED4356D31E765F9200D5C0B8 /* LLUerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LLUerInfoView.swift; path = ../Controller/LLUerInfoView.swift; sourceTree = "<group>"; };
 		ED4356D71E767A2300D5C0B8 /* LLAccoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLAccoutCell.swift; sourceTree = "<group>"; };
 		ED4356D81E767A2300D5C0B8 /* LLAccoutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLAccoutCell.xib; sourceTree = "<group>"; };
-		ED4356FD1E76BF3000D5C0B8 /* LLTVCollectionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLTVCollectionList.swift; sourceTree = "<group>"; };
 		ED441D4F1E02812C00B84AD4 /* LLCurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCurrentUser.swift; sourceTree = "<group>"; };
 		ED4579E81E653E4200AA95CC /* LLAuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LLAuthManager.swift; path = "../工具库/LLAuthManager.swift"; sourceTree = "<group>"; };
 		ED4DA7ED1E98C3600079FCD4 /* LLCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCategoryCell.swift; sourceTree = "<group>"; };
 		ED4DA7F11E98C8390079FCD4 /* LLMovieItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMovieItemCell.swift; sourceTree = "<group>"; };
 		ED4DA8061E98D32C0079FCD4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		ED4E21CB1EA7800600444488 /* BMPlayerCustomControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BMPlayerCustomControlView.swift; path = ../BMPlayerCustomControlView.swift; sourceTree = "<group>"; };
 		ED4E22121EA7AD1900444488 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		ED4E22141EA7AD2A00444488 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		ED4E22161EA7AD3300444488 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -352,7 +446,7 @@
 		ED59FB571E2EFFA800216063 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		ED59FB5D1E2EFFC900216063 /* LLUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLUser.swift; sourceTree = "<group>"; };
 		ED59FB5F1E2EFFD600216063 /* UIButton+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
-		ED59FB611E2F00BF00216063 /* BaseNaVgationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNaVgationController.swift; sourceTree = "<group>"; };
+		ED59FB611E2F00BF00216063 /* BaseNaVgationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNaVgationController.swift; path = ../Controller/BaseNaVgationController.swift; sourceTree = "<group>"; };
 		ED59FB631E2F036B00216063 /* LLLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLoginView.swift; sourceTree = "<group>"; };
 		ED59FB651E2F037F00216063 /* LLLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LLLoginViewController.xib; path = ../View/LLLoginViewController.xib; sourceTree = "<group>"; };
 		ED6487A31E752057009673E7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -361,6 +455,9 @@
 		ED6C413C1E9E5BCD0060D848 /* IndexTittleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexTittleView.xib; sourceTree = "<group>"; };
 		ED6C413E1E9E5BE70060D848 /* IndexTittleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTittleView.swift; sourceTree = "<group>"; };
 		ED741F7B1E6F9FC600CFE8BC /* LLThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLThemeManager.swift; sourceTree = "<group>"; };
+		ED7D8CAC1EADCA5500CFBD95 /* LLResultHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLResultHeadView.swift; sourceTree = "<group>"; };
+		ED7D8DB01EAE0C5500CFBD95 /* LLSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSearchResult.swift; sourceTree = "<group>"; };
+		ED7D8DB21EAE4F7000CFBD95 /* LLResultItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLResultItemCell.swift; sourceTree = "<group>"; };
 		ED8A9CF51E2F5FEF001A2EC8 /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
 		ED8A9CF61E2F5FEF001A2EC8 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
 		ED8A9CF71E2F5FEF001A2EC8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -375,7 +472,6 @@
 		ED8A9D001E2F5FEF001A2EC8 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		ED8EBE541EA9E6A900876B03 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED8EBE551EA9E6A900876B03 /* YNCategoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNCategoryButton.swift; sourceTree = "<group>"; };
-		ED8EBE561EA9E6A900876B03 /* YNSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNSearch.h; sourceTree = "<group>"; };
 		ED8EBE571EA9E6A900876B03 /* YNSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearch.swift; sourceTree = "<group>"; };
 		ED8EBE581EA9E6A900876B03 /* YNSearch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YNSearch.xcassets; sourceTree = "<group>"; };
 		ED8EBE591EA9E6A900876B03 /* YNSearchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchDelegate.swift; sourceTree = "<group>"; };
@@ -402,6 +498,7 @@
 		ED9307EE1E9FE2C5006E44FB /* LLRevertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRevertViewController.swift; sourceTree = "<group>"; };
 		ED9682A51E9F336D00D399E4 /* LLCodeScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCodeScanViewController.swift; sourceTree = "<group>"; };
 		EDA058671E63DAFC0086D564 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SweetAlert.swift; path = ../SweetAlert.swift; sourceTree = "<group>"; };
+		EDA2E90D1EAF789E00FF3933 /* LLResultItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLResultItemCell.xib; sourceTree = "<group>"; };
 		EDA402311E24D00C00E00CCE /* LLAnimationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLAnimationTabBarController.swift; sourceTree = "<group>"; };
 		EDAAFF3C1E778A5800EC8865 /* NVActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
 		EDAAFF3D1E778A5800EC8865 /* NVActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
@@ -442,7 +539,6 @@
 		EDAAFF601E778A5800EC8865 /* NVActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVActivityIndicatorView.h; sourceTree = "<group>"; };
 		EDAAFF611E778A5800EC8865 /* NVActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorView.swift; sourceTree = "<group>"; };
 		EDAAFF621E778A5800EC8865 /* NVActivityIndicatorViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorViewable.swift; sourceTree = "<group>"; };
-		EDAC7E371E9A2D09008AC53F /* LLMovieItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLMovieItemCell.xib; sourceTree = "<group>"; };
 		EDB754271E6910B100E2C350 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		EDB7542A1E6910F800E2C350 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		EDB7542C1E69110200E2C350 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -516,6 +612,8 @@
 		EDC18AF11E55A6330026E4D2 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		EDC18AF21E55A6330026E4D2 /* ThreadHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadHelper.swift; sourceTree = "<group>"; };
 		EDC18AF31E55A6330026E4D2 /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
+		EDCD0B591EB072F600399DBE /* SubtitleDemo.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SubtitleDemo.srt; sourceTree = "<group>"; };
+		EDCD0B5D1EB0861400399DBE /* BMPlayerCustomControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMPlayerCustomControlView.swift; sourceTree = "<group>"; };
 		EDD3C2351E728B9F005E43D8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDD3C2361E728B9F005E43D8 /* LTCharacterDiffResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterDiffResult.swift; sourceTree = "<group>"; };
 		EDD3C2371E728B9F005E43D8 /* LTCharacterLimbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterLimbo.swift; sourceTree = "<group>"; };
@@ -535,6 +633,9 @@
 		EDD3C2461E728B9F005E43D8 /* Fragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fragment.png; sourceTree = "<group>"; };
 		EDD3C2471E728B9F005E43D8 /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
 		EDD3C2481E728B9F005E43D8 /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
+		EDD42AD71EB71B9900AADE01 /* LLRecommadItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRecommadItems.swift; sourceTree = "<group>"; };
+		EDD42AD91EB74A7100AADE01 /* LLDownMovieMananger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LLDownMovieMananger.swift; path = "../公用/LLDownMovieMananger.swift"; sourceTree = "<group>"; };
+		EDD544431EB6395900A54433 /* BaseNavgationController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseNavgationController+extension.swift"; sourceTree = "<group>"; };
 		EDD813AE1E9692E300A9D6B2 /* LLCategoryRecItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCategoryRecItem.swift; sourceTree = "<group>"; };
 		EDDD54AE1E25EDDA00E3DC1F /* LLMainTabarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMainTabarController.swift; sourceTree = "<group>"; };
 		EDF00B531EA3479F0038DF3A /* LLRevertMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRevertMsg.swift; sourceTree = "<group>"; };
@@ -611,6 +712,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2F09E51EB8E21500232448 /* SQLite.framework in Frameworks */,
 				EDB7542E1E69110200E2C350 /* libsqlite3.0.tbd in Frameworks */,
 				EDB7542F1E69110200E2C350 /* libsqlite3.tbd in Frameworks */,
 				ED4E224F1EA7B64D00444488 /* QQConnector.framework in Frameworks */,
@@ -643,9 +745,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED2F09CE1EB8E20700232448 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED2F09D81EB8E20700232448 /* SQLite.framework */,
+				ED2F09DA1EB8E20700232448 /* SQLiteTests iOS.xctest */,
+				ED2F09DC1EB8E20700232448 /* SQLite.framework */,
+				ED2F09DE1EB8E20700232448 /* SQLiteTests Mac.xctest */,
+				ED2F09E01EB8E20700232448 /* SQLite.framework */,
+				ED2F09E21EB8E20700232448 /* SQLiteTests tvOS.xctest */,
+				ED2F09E41EB8E20700232448 /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		ED3DB51E1DEA8C490030B3BC = {
 			isa = PBXGroup;
 			children = (
+				EDD544421EB61A4500A54433 /* 公用 */,
+				ED3DB54D1DEA8C890030B3BC /* 模型 */,
 				ED4E22181EA7B64C00444488 /* ShareSDK */,
 				EDAAFF391E778A4B00EC8865 /* 加载动画指示 */,
 				EDB754271E6910B100E2C350 /* BmobSDK.framework */,
@@ -653,10 +771,12 @@
 				EDA402301E24CFAE00E00CCE /* 控制器动画 */,
 				ED3DB5491DEA8C890030B3BC /* 扩展 */,
 				ED3DB54A1DEA8C890030B3BC /* 全局 */,
-				ED3DB54C1DEA8C890030B3BC /* Controller */,
-				ED3DB54F1DEA8C890030B3BC /* View */,
+				ED3DB54C1DEA8C890030B3BC /* 控制器 */,
+				ED3DB54F1DEA8C890030B3BC /* 视图 */,
 				ED3DB5291DEA8C490030B3BC /* LLTVShow */,
 				ED3DB5281DEA8C490030B3BC /* Products */,
+				ED2F09CD1EB8E20700232448 /* SQLite.xcodeproj */,
+				EDCD0B591EB072F600399DBE /* SubtitleDemo.srt */,
 				EDB754291E6910F800E2C350 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -692,6 +812,7 @@
 				ED59FB551E2EFFA800216063 /* UIColor+extension.swift */,
 				ED59FB561E2EFFA800216063 /* UIDevice+extension.swift */,
 				ED59FB571E2EFFA800216063 /* UIImage+extension.swift */,
+				EDD544431EB6395900A54433 /* BaseNavgationController+extension.swift */,
 			);
 			path = "扩展";
 			sourceTree = "<group>";
@@ -699,76 +820,92 @@
 		ED3DB54A1DEA8C890030B3BC /* 全局 */ = {
 			isa = PBXGroup;
 			children = (
+				ED2F09971EB86F6700232448 /* KYCircularProgress.swift */,
 				ED741F7B1E6F9FC600CFE8BC /* LLThemeManager.swift */,
 				ED4579E81E653E4200AA95CC /* LLAuthManager.swift */,
 				EDA058671E63DAFC0086D564 /* SweetAlert.swift */,
 				ED3DB52A1DEA8C490030B3BC /* AppDelegate.swift */,
 				ED3DB5541DEA8D410030B3BC /* GlobalConfig.swift */,
 				ED441D4F1E02812C00B84AD4 /* LLCurrentUser.swift */,
-				ED4356FD1E76BF3000D5C0B8 /* LLTVCollectionList.swift */,
 			);
 			path = "全局";
 			sourceTree = "<group>";
 		};
-		ED3DB54C1DEA8C890030B3BC /* Controller */ = {
+		ED3DB54C1DEA8C890030B3BC /* 控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				ED30E8C41EBB35190046AE82 /* LLUserMsgViewController.swift */,
 				ED9307EE1E9FE2C5006E44FB /* LLRevertViewController.swift */,
 				EDF82D131E9F65A00099F5D1 /* LLAdminViewController.swift */,
 				ED9682A51E9F336D00D399E4 /* LLCodeScanViewController.swift */,
 				ED6C41381E9DF6BC0060D848 /* LLDetailCollectionViewController.swift */,
 				ED59FB4F1E2EFF8100216063 /* LLLoginViewController.swift */,
 				ED59FB651E2F037F00216063 /* LLLoginViewController.xib */,
-				ED59FB611E2F00BF00216063 /* BaseNaVgationController.swift */,
-				ED3DB5561DEA8D910030B3BC /* BaseViewController.swift */,
 				ED3DC5731E31E340008CA172 /* LLRegisterViewController.swift */,
 				EDF88B3A1E4D67320034CAAF /* LLTVListViewController.swift */,
 				EDF88B3C1E4D67C50034CAAF /* LLAcountViewController.swift */,
 				EDF82D151E9F66200099F5D1 /* LLAboutViewController.swift */,
 				ED8EBE6F1EA9E71C00876B03 /* LLSearchViewController.swift */,
 				ED8EBE731EAA1F1100876B03 /* LLResultViewController.swift */,
-				ED3DB54D1DEA8C890030B3BC /* Model */,
+				ED41FC7B1EB1CD8100912F4C /* LLCollectedViewController.swift */,
+				ED41FC7D1EB2115100912F4C /* LLWatchedViewController.swift */,
+				ED41FC7F1EB2116A00912F4C /* LLPrivateInfoViewController.swift */,
+				ED41FC811EB21BE000912F4C /* LLFullLandScreenViewController.swift */,
+				ED2F09911EB82A1F00232448 /* LLMovieDownViewController.swift */,
+				ED30E8C61EBB36B10046AE82 /* LLThemeViewController.swift */,
+				ED30E8C81EBB37B80046AE82 /* LLPrefrenceViewController.swift */,
 			);
+			name = "控制器";
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		ED3DB54D1DEA8C890030B3BC /* Model */ = {
+		ED3DB54D1DEA8C890030B3BC /* 模型 */ = {
 			isa = PBXGroup;
 			children = (
+				ED30E8BB1EBAF6C90046AE82 /* LLPerfrenceCalutor.swift */,
+				ED2F098F1EB81A6800232448 /* LLDownMovieItems.swift */,
+				EDD42AD91EB74A7100AADE01 /* LLDownMovieMananger.swift */,
 				ED59FB5D1E2EFFC900216063 /* LLUser.swift */,
 				ED42B68C1E7A6098008FCCF3 /* LLContenCategory.swift */,
 				EDD813AE1E9692E300A9D6B2 /* LLCategoryRecItem.swift */,
 				ED1F2B0C1E974A4000C6B08A /* LLWeatherInfo.swift */,
 				EDF00B531EA3479F0038DF3A /* LLRevertMsg.swift */,
+				ED7D8DB01EAE0C5500CFBD95 /* LLSearchResult.swift */,
+				ED41FC771EB1B67200912F4C /* LLCollectItem.swift */,
+				ED41FC791EB1BB5600912F4C /* LLCollectListManager.swift */,
+				EDD42AD71EB71B9900AADE01 /* LLRecommadItems.swift */,
 			);
-			name = Model;
-			path = ../Model;
+			name = "模型";
+			path = Model;
 			sourceTree = "<group>";
 		};
-		ED3DB54F1DEA8C890030B3BC /* View */ = {
+		ED3DB54F1DEA8C890030B3BC /* 视图 */ = {
 			isa = PBXGroup;
 			children = (
-				ED8EBE531EA9E6A900876B03 /* YNSearch */,
+				ED2F09931EB8323A00232448 /* DownItemCell.swift */,
+				ED2F09951EB8325900232448 /* DownItemCell.xib */,
+				ED7D8DB21EAE4F7000CFBD95 /* LLResultItemCell.swift */,
+				EDA2E90D1EAF789E00FF3933 /* LLResultItemCell.xib */,
+				ED7D8CAC1EADCA5500CFBD95 /* LLResultHeadView.swift */,
 				EDF00B551EA355640038DF3A /* RevertCell.swift */,
 				ED6C413E1E9E5BE70060D848 /* IndexTittleView.swift */,
 				ED6C413C1E9E5BCD0060D848 /* IndexTittleView.xib */,
 				ED6C413A1E9DFCCA0060D848 /* LLDetailCollectionViewCell.swift */,
 				ED4DA7ED1E98C3600079FCD4 /* LLCategoryCell.swift */,
 				ED4DA7F11E98C8390079FCD4 /* LLMovieItemCell.swift */,
-				EDAC7E371E9A2D09008AC53F /* LLMovieItemCell.xib */,
-				ED420D521E4C4F0D00C0EB4E /* LLBaseCollectionView.swift */,
 				ED4356D31E765F9200D5C0B8 /* LLUerInfoView.swift */,
 				ED4356D11E76557400D5C0B8 /* LLUerInfoView.xib */,
 				ED4356D71E767A2300D5C0B8 /* LLAccoutCell.swift */,
 				ED4356D81E767A2300D5C0B8 /* LLAccoutCell.xib */,
 				ED59FB631E2F036B00216063 /* LLLoginView.swift */,
-				ED420D501E4C4E7300C0EB4E /* LLBaseTableView.swift */,
+				ED8EBE531EA9E6A900876B03 /* 搜索 */,
 				ED9307ED1E9FD306006E44FB /* 视频 */,
-				EDD3C2341E728B9F005E43D8 /* LTMorphingLabel */,
+				EDD3C2341E728B9F005E43D8 /* 特效标签 */,
 				ED3DC5761E31F3C3008CA172 /* ZYAnimationLayer.h */,
 				ED3DC5771E31F3C3008CA172 /* ZYAnimationLayer.m */,
-				ED8A9CF41E2F5FEF001A2EC8 /* TextFieldEffects */,
+				ED8A9CF41E2F5FEF001A2EC8 /* 输入框 */,
 			);
+			name = "视图";
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -887,7 +1024,7 @@
 			path = Required;
 			sourceTree = "<group>";
 		};
-		ED8A9CF41E2F5FEF001A2EC8 /* TextFieldEffects */ = {
+		ED8A9CF41E2F5FEF001A2EC8 /* 输入框 */ = {
 			isa = PBXGroup;
 			children = (
 				EDB754421E69431100E2C350 /* SkyFloatingLabelTextField.swift */,
@@ -906,15 +1043,16 @@
 				ED8A9CFF1E2F5FEF001A2EC8 /* YokoTextField.swift */,
 				ED8A9D001E2F5FEF001A2EC8 /* YoshikoTextField.swift */,
 			);
+			name = "输入框";
 			path = TextFieldEffects;
 			sourceTree = "<group>";
 		};
-		ED8EBE531EA9E6A900876B03 /* YNSearch */ = {
+		ED8EBE531EA9E6A900876B03 /* 搜索 */ = {
 			isa = PBXGroup;
 			children = (
 				ED8EBE541EA9E6A900876B03 /* Info.plist */,
+				ED8EBE611EA9E6A900876B03 /* YNSearchViewController.swift */,
 				ED8EBE551EA9E6A900876B03 /* YNCategoryButton.swift */,
-				ED8EBE561EA9E6A900876B03 /* YNSearch.h */,
 				ED8EBE571EA9E6A900876B03 /* YNSearch.swift */,
 				ED8EBE581EA9E6A900876B03 /* YNSearch.xcassets */,
 				ED8EBE591EA9E6A900876B03 /* YNSearchDelegate.swift */,
@@ -925,15 +1063,15 @@
 				ED8EBE5E1EA9E6A900876B03 /* YNSearchMainView.swift */,
 				ED8EBE5F1EA9E6A900876B03 /* YNSearchTextField.swift */,
 				ED8EBE601EA9E6A900876B03 /* YNSearchView.swift */,
-				ED8EBE611EA9E6A900876B03 /* YNSearchViewController.swift */,
 			);
+			name = "搜索";
 			path = YNSearch;
 			sourceTree = "<group>";
 		};
 		ED9307ED1E9FD306006E44FB /* 视频 */ = {
 			isa = PBXGroup;
 			children = (
-				ED4E21CB1EA7800600444488 /* BMPlayerCustomControlView.swift */,
+				EDCD0B5D1EB0861400399DBE /* BMPlayerCustomControlView.swift */,
 				ED9307DB1E9FD2B6006E44FB /* BMPlayer.swift */,
 				ED9307DC1E9FD2B6006E44FB /* BMPlayerClearityChooseButton.swift */,
 				ED9307DD1E9FD2B6006E44FB /* BMPlayerControlView.swift */,
@@ -1121,7 +1259,7 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		EDD3C2341E728B9F005E43D8 /* LTMorphingLabel */ = {
+		EDD3C2341E728B9F005E43D8 /* 特效标签 */ = {
 			isa = PBXGroup;
 			children = (
 				EDD3C2351E728B9F005E43D8 /* Info.plist */,
@@ -1141,6 +1279,7 @@
 				EDD3C2431E728B9F005E43D8 /* LTStringDiffResult.swift */,
 				EDD3C2441E728B9F005E43D8 /* Particles */,
 			);
+			name = "特效标签";
 			path = LTMorphingLabel;
 			sourceTree = "<group>";
 		};
@@ -1153,6 +1292,20 @@
 				EDD3C2481E728B9F005E43D8 /* Sparkle.png */,
 			);
 			path = Particles;
+			sourceTree = "<group>";
+		};
+		EDD544421EB61A4500A54433 /* 公用 */ = {
+			isa = PBXGroup;
+			children = (
+				ED420D521E4C4F0D00C0EB4E /* LLBaseCollectionView.swift */,
+				ED59FB611E2F00BF00216063 /* BaseNaVgationController.swift */,
+				ED3DB5561DEA8D910030B3BC /* BaseViewController.swift */,
+				ED420D501E4C4E7300C0EB4E /* LLBaseTableView.swift */,
+				ED2F09E61EB8E24A00232448 /* LLSQLiteHelper.swift */,
+				ED30E8CC1EBB6E320046AE82 /* LLBaseLable.swift */,
+				ED30E8CE1EBB7DB50046AE82 /* LLBaseButton.swift */,
+			);
+			path = "公用";
 			sourceTree = "<group>";
 		};
 		EDF154441E6002E20001A946 /* MJRefresh */ = {
@@ -1345,12 +1498,70 @@
 			mainGroup = ED3DB51E1DEA8C490030B3BC;
 			productRefGroup = ED3DB5281DEA8C490030B3BC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = ED2F09CE1EB8E20700232448 /* Products */;
+					ProjectRef = ED2F09CD1EB8E20700232448 /* SQLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				ED3DB5261DEA8C490030B3BC /* LLTVShow */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		ED2F09D81EB8E20700232448 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = ED2F09D71EB8E20700232448 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ED2F09DA1EB8E20700232448 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = ED2F09D91EB8E20700232448 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ED2F09DC1EB8E20700232448 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = ED2F09DB1EB8E20700232448 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ED2F09DE1EB8E20700232448 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = ED2F09DD1EB8E20700232448 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ED2F09E01EB8E20700232448 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = ED2F09DF1EB8E20700232448 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ED2F09E21EB8E20700232448 /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = ED2F09E11EB8E20700232448 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ED2F09E41EB8E20700232448 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = ED2F09E31EB8E20700232448 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		ED3DB5251DEA8C490030B3BC /* Resources */ = {
@@ -1361,19 +1572,21 @@
 				ED4356DA1E767A2300D5C0B8 /* LLAccoutCell.xib in Resources */,
 				ED4356D21E76557400D5C0B8 /* LLUerInfoView.xib in Resources */,
 				EDD3C25A1E728B9F005E43D8 /* Sparkle.png in Resources */,
+				ED2F09961EB8325900232448 /* DownItemCell.xib in Resources */,
 				EDF154FE1E600B050001A946 /* Info.plist in Resources */,
 				EDF88B391E4D62AF0034CAAF /* Launch Screen.storyboard in Resources */,
 				EDD3C2581E728B9F005E43D8 /* Fragment.png in Resources */,
+				EDA2E90E1EAF789F00FF3933 /* LLResultItemCell.xib in Resources */,
 				ED6C413D1E9E5BCD0060D848 /* IndexTittleView.xib in Resources */,
 				ED4E224A1EA7B64D00444488 /* ShareSDKUI.bundle in Resources */,
 				ED266E8F1DF9941F0083E31F /* Images.xcassets in Resources */,
 				ED4E225B1EA7B64D00444488 /* ShareSDK.bundle in Resources */,
+				EDCD0B5A1EB072F600399DBE /* SubtitleDemo.srt in Resources */,
 				EDD3C2491E728B9F005E43D8 /* Info.plist in Resources */,
 				EDF154FD1E600B050001A946 /* Info-tvOS.plist in Resources */,
 				EDF154811E6002E20001A946 /* MJRefresh.bundle in Resources */,
 				ED8A9D031E2F5FEF001A2EC8 /* Info.plist in Resources */,
 				ED4E22551EA7B64D00444488 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
-				EDAC7E381E9A2D09008AC53F /* LLMovieItemCell.xib in Resources */,
 				ED4E22471EA7B64D00444488 /* ShareSDKConfigFile.bundle in Resources */,
 				ED8EBE651EA9E6A900876B03 /* YNSearch.xcassets in Resources */,
 				ED59FB661E2F037F00216063 /* LLLoginViewController.xib in Resources */,
@@ -1404,6 +1617,7 @@
 				ED42B6D01E7A6DD8008FCCF3 /* StickyHeaderView.swift in Sources */,
 				EDF155091E600B050001A946 /* SessionManager.swift in Sources */,
 				ED42B68D1E7A6098008FCCF3 /* LLContenCategory.swift in Sources */,
+				ED41FC7E1EB2115100912F4C /* LLWatchedViewController.swift in Sources */,
 				EDF154751E6002E20001A946 /* MJRefreshComponent.m in Sources */,
 				ED8A9D061E2F5FEF001A2EC8 /* KaedeTextField.swift in Sources */,
 				EDF154781E6002E20001A946 /* MJRefreshAutoGifFooter.m in Sources */,
@@ -1417,6 +1631,7 @@
 				ED8EBE6D1EA9E6A900876B03 /* YNSearchView.swift in Sources */,
 				EDF154731E6002E20001A946 /* MJRefreshAutoFooter.m in Sources */,
 				EDAAFF651E778A5800EC8865 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				ED2F09901EB81A6800232448 /* LLDownMovieItems.swift in Sources */,
 				ED59FB5A1E2EFFA800216063 /* UIColor+extension.swift in Sources */,
 				EDB754841E69478B00E2C350 /* ConstraintPriority.swift in Sources */,
 				EDC18B011E55A6330026E4D2 /* Indicator.swift in Sources */,
@@ -1437,8 +1652,9 @@
 				EDF154741E6002E20001A946 /* MJRefreshBackFooter.m in Sources */,
 				EDAAFF6D1E778A5800EC8865 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				ED59FB601E2EFFD600216063 /* UIButton+extension.swift in Sources */,
+				EDD544441EB6395900A54433 /* BaseNavgationController+extension.swift in Sources */,
+				ED30E8BC1EBAF6C90046AE82 /* LLPerfrenceCalutor.swift in Sources */,
 				ED4DA7F21E98C8390079FCD4 /* LLMovieItemCell.swift in Sources */,
-				ED4356FE1E76BF3000D5C0B8 /* LLTVCollectionList.swift in Sources */,
 				ED6C413F1E9E5BE70060D848 /* IndexTittleView.swift in Sources */,
 				EDA402321E24D00C00E00CCE /* LLAnimationTabBarController.swift in Sources */,
 				ED8EBE671EA9E6A900876B03 /* YNSearchExtension.swift in Sources */,
@@ -1450,6 +1666,7 @@
 				ED59FB5E1E2EFFC900216063 /* LLUser.swift in Sources */,
 				ED1F2B0D1E974A4000C6B08A /* LLWeatherInfo.swift in Sources */,
 				ED9682A61E9F336D00D399E4 /* LLCodeScanViewController.swift in Sources */,
+				ED2F09921EB82A1F00232448 /* LLMovieDownViewController.swift in Sources */,
 				ED59FB591E2EFFA800216063 /* UIBarButtonItem+extension.swift in Sources */,
 				ED8A9D081E2F5FEF001A2EC8 /* MinoruTextField.swift in Sources */,
 				EDB7547F1E69478B00E2C350 /* ConstraintMakerFinalizable.swift in Sources */,
@@ -1469,6 +1686,8 @@
 				ED8A9D021E2F5FEF001A2EC8 /* HoshiTextField.swift in Sources */,
 				EDAAFF811E778A5800EC8865 /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				EDAAFF721E778A5800EC8865 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
+				ED41FC7A1EB1BB5600912F4C /* LLCollectListManager.swift in Sources */,
+				ED41FC781EB1B67200912F4C /* LLCollectItem.swift in Sources */,
 				EDF154791E6002E20001A946 /* MJRefreshAutoNormalFooter.m in Sources */,
 				EDF155081E600B050001A946 /* SessionDelegate.swift in Sources */,
 				EDAAFF641E778A5800EC8865 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
@@ -1503,6 +1722,7 @@
 				EDB754861E69478B00E2C350 /* ConstraintRelatableTarget.swift in Sources */,
 				EDB754471E69431100E2C350 /* UITextField+fixCaretPosition.swift in Sources */,
 				EDB754781E69478B00E2C350 /* ConstraintLayoutGuide.swift in Sources */,
+				ED2F09941EB8323A00232448 /* DownItemCell.swift in Sources */,
 				EDD3C2531E728B9F005E43D8 /* LTMorphingLabel+Pixelate.swift in Sources */,
 				EDF1550B1E600B050001A946 /* Timeline.swift in Sources */,
 				EDF00B541EA3479F0038DF3A /* LLRevertMsg.swift in Sources */,
@@ -1528,14 +1748,18 @@
 				ED4DA7EE1E98C3600079FCD4 /* LLCategoryCell.swift in Sources */,
 				ED3DB55D1DEA9D040030B3BC /* UIViewextension.swift in Sources */,
 				EDB754791E69478B00E2C350 /* ConstraintLayoutGuideDSL.swift in Sources */,
+				ED7D8DB31EAE4F7000CFBD95 /* LLResultItemCell.swift in Sources */,
 				EDAAFF7E1E778A5800EC8865 /* NVActivityIndicatorAnimationOrbit.swift in Sources */,
 				EDB754881E69478B00E2C350 /* ConstraintView+Extensions.swift in Sources */,
 				EDF1550C1E600B050001A946 /* Validation.swift in Sources */,
+				ED41FC821EB21BE000912F4C /* LLFullLandScreenViewController.swift in Sources */,
+				ED2F09E71EB8E24A00232448 /* LLSQLiteHelper.swift in Sources */,
 				EDC18B001E55A6330026E4D2 /* ImageView+Kingfisher.swift in Sources */,
 				EDB754761E69478B00E2C350 /* ConstraintItem.swift in Sources */,
 				EDAAFF6A1E778A5800EC8865 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
-				ED4E21CC1EA7800600444488 /* BMPlayerCustomControlView.swift in Sources */,
+				ED7D8DB11EAE0C5500CFBD95 /* LLSearchResult.swift in Sources */,
 				EDAAFF6C1E778A5800EC8865 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				ED30E8C51EBB35190046AE82 /* LLUserMsgViewController.swift in Sources */,
 				ED420D961E4C504F00C0EB4E /* LLRefreshView.swift in Sources */,
 				EDC18AFE1E55A6330026E4D2 /* ImageProcessor.swift in Sources */,
 				ED8EBE6B1EA9E6A900876B03 /* YNSearchMainView.swift in Sources */,
@@ -1543,23 +1767,28 @@
 				ED42B6901E7A6296008FCCF3 /* UIScrollView+EmptyDataSet.m in Sources */,
 				EDDD54AF1E25EDDA00E3DC1F /* LLMainTabarController.swift in Sources */,
 				ED9307E51E9FD2B6006E44FB /* BMPlayerClearityChooseButton.swift in Sources */,
+				ED41FC801EB2116A00912F4C /* LLPrivateInfoViewController.swift in Sources */,
 				ED8A9D0B1E2F5FEF001A2EC8 /* YoshikoTextField.swift in Sources */,
 				ED42B6D31E7A6DD8008FCCF3 /* MenuCell.swift in Sources */,
 				EDB754851E69478B00E2C350 /* ConstraintPriorityTarget.swift in Sources */,
 				EDD813AF1E9692E300A9D6B2 /* LLCategoryRecItem.swift in Sources */,
+				EDD42AD81EB71B9900AADE01 /* LLRecommadItems.swift in Sources */,
 				EDF154801E6002E20001A946 /* MJRefreshStateHeader.m in Sources */,
 				ED8EBE641EA9E6A900876B03 /* YNSearch.swift in Sources */,
 				ED42B6D21E7A6DD8008FCCF3 /* UIScrollView+NormalizedContentOffset.swift in Sources */,
 				EDD3C2521E728B9F005E43D8 /* LTMorphingLabel+Fall.swift in Sources */,
+				ED30E8CD1EBB6E320046AE82 /* LLBaseLable.swift in Sources */,
 				ED42B6D51E7A6DD8008FCCF3 /* MenuView.swift in Sources */,
 				ED8A9D091E2F5FEF001A2EC8 /* TextFieldsEffects.swift in Sources */,
 				EDAAFF771E778A5800EC8865 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
 				ED3DC5741E31E340008CA172 /* LLRegisterViewController.swift in Sources */,
 				ED9307E61E9FD2B6006E44FB /* BMPlayerControlView.swift in Sources */,
+				ED30E8C71EBB36B10046AE82 /* LLThemeViewController.swift in Sources */,
 				EDD3C24E1E728B9F005E43D8 /* LTMorphingEffect.swift in Sources */,
 				EDD3C2551E728B9F005E43D8 /* LTMorphingLabel.swift in Sources */,
 				EDB754831E69478B00E2C350 /* ConstraintOffsetTarget.swift in Sources */,
 				EDAAFF821E778A5900EC8865 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				ED7D8CAD1EADCA5500CFBD95 /* LLResultHeadView.swift in Sources */,
 				ED42B6D41E7A6DD8008FCCF3 /* MenuItem.swift in Sources */,
 				EDAAFF881E778A5900EC8865 /* NVActivityIndicatorViewable.swift in Sources */,
 				EDF155071E600B050001A946 /* ServerTrustPolicy.swift in Sources */,
@@ -1572,6 +1801,7 @@
 				EDB7548F1E69478B00E2C350 /* UILayoutSupport+Extensions.swift in Sources */,
 				ED42B6D11E7A6DD8008FCCF3 /* UIEdgeInsets+Equatable.swift in Sources */,
 				EDF154821E6002E20001A946 /* MJRefreshConst.m in Sources */,
+				EDCD0B5E1EB0861400399DBE /* BMPlayerCustomControlView.swift in Sources */,
 				EDAAFF781E778A5800EC8865 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				EDF1547B1E6002E20001A946 /* MJRefreshBackGifFooter.m in Sources */,
 				EDB754891E69478B00E2C350 /* ConstraintView.swift in Sources */,
@@ -1589,6 +1819,7 @@
 				EDB7547D1E69478B00E2C350 /* ConstraintMakerEditable.swift in Sources */,
 				EDAAFF671E778A5800EC8865 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				ED4DA8071E98D32C0079FCD4 /* SwiftyJSON.swift in Sources */,
+				ED30E8CF1EBB7DB50046AE82 /* LLBaseButton.swift in Sources */,
 				ED3DC5791E31F3C3008CA172 /* ZYAnimationLayer.m in Sources */,
 				EDC18B051E55A6330026E4D2 /* RequestModifier.swift in Sources */,
 				ED9307E81E9FD2B6006E44FB /* BMPlayerLayerView.swift in Sources */,
@@ -1599,17 +1830,21 @@
 				ED4356D91E767A2300D5C0B8 /* LLAccoutCell.swift in Sources */,
 				EDD3C24A1E728B9F005E43D8 /* LTCharacterDiffResult.swift in Sources */,
 				EDC18B091E55A6330026E4D2 /* UIButton+Kingfisher.swift in Sources */,
+				ED30E8C91EBB37B80046AE82 /* LLPrefrenceViewController.swift in Sources */,
 				ED9307EA1E9FD2B6006E44FB /* BMPlayerProtocols.swift in Sources */,
 				EDF155001E600B050001A946 /* NetworkReachabilityManager.swift in Sources */,
 				ED9307EC1E9FD2B6006E44FB /* BMTimeSlider.swift in Sources */,
 				EDF00B561EA355640038DF3A /* RevertCell.swift in Sources */,
 				EDF154841E6002E20001A946 /* UIScrollView+MJExtension.m in Sources */,
 				EDF154FA1E600B050001A946 /* AFError.swift in Sources */,
+				EDD42ADA1EB74A7100AADE01 /* LLDownMovieMananger.swift in Sources */,
 				EDAAFF7D1E778A5800EC8865 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				EDB754711E69478B00E2C350 /* ConstraintConstantTarget.swift in Sources */,
 				EDB754461E69431100E2C350 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
+				ED41FC7C1EB1CD8100912F4C /* LLCollectedViewController.swift in Sources */,
 				EDB754451E69431100E2C350 /* SkyFloatingLabelTextField.swift in Sources */,
 				EDB7547A1E69478B00E2C350 /* ConstraintLayoutSupport.swift in Sources */,
+				ED2F09981EB86F6700232448 /* KYCircularProgress.swift in Sources */,
 				ED8EBE701EA9E71C00876B03 /* LLSearchViewController.swift in Sources */,
 				EDF154851E6002E20001A946 /* UIScrollView+MJRefresh.m in Sources */,
 				EDAAFF7F1E778A5800EC8865 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
@@ -1753,6 +1988,7 @@
 					"$(PROJECT_DIR)/ShareSDK/Support/PlatformConnector",
 					"$(PROJECT_DIR)/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/加载动画指示/NVActivityIndicatorView",
 				);
 				INFOPLIST_FILE = LLTVShow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -1789,6 +2025,7 @@
 					"$(PROJECT_DIR)/ShareSDK/Support/PlatformConnector",
 					"$(PROJECT_DIR)/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/加载动画指示/NVActivityIndicatorView",
 				);
 				INFOPLIST_FILE = LLTVShow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;

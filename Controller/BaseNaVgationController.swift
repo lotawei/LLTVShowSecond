@@ -23,70 +23,89 @@ import UIKit
 
 
 class BaseNaVgationController: UINavigationController {
+    
+    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+         NOTIfyCenter.addObserver(self, selector: #selector(BaseNaVgationController.basegetnotify(_:)), name: NSNotification.Name(rawValue: notificationName), object: nil)
         
-       //初始化nav
-        
-        setNaviBack()
-        
-        
+    
         
         
     }
     
     func setNaviBack(){
-    
+        let  navigationBar = UINavigationBar.appearance()
+     
         
-  
-    let  navigationBar = UINavigationBar.appearance()
-    //去掉线
-    navigationBar.backgroundColor = normalcolor
-    
-    navigationBar.tintColor = fontcolor
+        if  LLCurrentUser.currentuser.user != nil {
+            if  LLCurrentUser.currentuser.user.substyle.rawValue == 0 {
+                 navigationBar.backgroundColor = normalcolor
+                 navigationBar.barTintColor = fontcolor
+                navigationBar.setBackgroundImage(UIImage(named:"img_light"), for: .default)
+            }
+            else if  LLCurrentUser.currentuser.user.substyle.rawValue == 1 {
+                navigationBar.backgroundColor = darkcolor
+                navigationBar.barTintColor = UIColor.black
+                navigationBar.setBackgroundImage(UIImage(named:"img_dark"), for: .default)
+            }
+            else if  LLCurrentUser.currentuser.user.substyle.rawValue == 2 {
+                navigationBar.backgroundColor = eyecolor
+                navigationBar.barTintColor = eyecolor
+                navigationBar.setBackgroundImage(UIImage(named:"img_eyepro"), for: .default)
+            }
+            
+            
+        }
+        else{
+            navigationBar.backgroundColor = normalcolor
+            navigationBar.barTintColor = fontcolor
+            navigationBar.setBackgroundImage(UIImage(named:"img_light"), for: .default)
+        }
+       
+       
     //返回按钮的箭头颜色
         //字体颜色
         navigationBar.titleTextAttributes = [NSFontAttributeName:UIFont.systemFont(ofSize: 18),NSForegroundColorAttributeName:fontcolor]
-      
+        
+        
+        
     }
- 
     
-    //这里可以更导航条颜色
+      //这里可以更导航条颜色
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationBar.setBackgroundImage(imagewithcolor(color: normalcolor), for: .default)
-        navigationBar.shadowImage = UIImage()
-
-        
-        
+        setNaviBack()
     }
-    
-   
-    
-    // 半透明背景
-    func imagewithcolor(color:UIColor) -> UIImage {
-        let  rect =  CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
-        //上下文
-        UIGraphicsBeginImageContext(rect.size)
-        
-        let   context  = UIGraphicsGetCurrentContext()
-        
-        context!.setFillColor(color.cgColor)
-        context?.fill(rect)
-        //从上下文获取图片
-        let   theimage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        
-        
-        return   theimage!
-    }
-    
- 
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func  basegetnotify(_ notify:Notification){
+        let  str  =  notify.object  as!  String
+        switch str {
+            
+        case LLPOSDarkStyle:
+            
+             setNaviBack()
+            break;
+        case LLPOSLightStyle:
+              setNaviBack()
+            break;
+        case  LLPOSEyeStyle:
+               setNaviBack()
+                    break;
+        default:
+            break;
+        }
+    }
+
+    deinit {
+        NOTIfyCenter.removeObserver(self, name: NSNotification.Name(rawValue: notificationName), object: nil)
+        
+    }
+    
 }

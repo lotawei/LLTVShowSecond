@@ -10,19 +10,15 @@ import UIKit
 class LLSearchViewController: YNSearchViewController ,YNSearchDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+           view.backgroundColor = UIColor.init(patternImage: UIImage(named:"background")!)
         edgesForExtendedLayout = .top
         automaticallyAdjustsScrollViewInsets = false
-
-        view.backgroundColor =   LLCurrentUser.currentuser.user == nil  ?  normalcolor : LLCurrentUser.currentuser.user.substyle.substylecolor()
-        
-        
+        YNSearch.firstload()
         self.ynSearchinit()
-        
-        
-           self.delegate = self
+        self.delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.ynSearchView.ynSearchMainView.setYNCategoryButtonType(type: .background)
+        self.ynSearchView.ynSearchMainView.setYNCategoryButtonType(type: .border)
+        
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +28,7 @@ class LLSearchViewController: YNSearchViewController ,YNSearchDelegate{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(false)
-           self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func ynSearchHistoryButtonClicked(text: String) {
@@ -59,6 +55,7 @@ class LLSearchViewController: YNSearchViewController ,YNSearchDelegate{
         
         
     }
+    
    
 
 }
