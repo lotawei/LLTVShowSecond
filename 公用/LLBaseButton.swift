@@ -12,23 +12,8 @@ class LLBaseButton: UIButton {
     override  init(frame:CGRect){
         super.init(frame: frame)
         
-        if  LLCurrentUser.currentuser.user != nil {
-            
-            setTitleColor(LLCurrentUser.currentuser.user.substyle.substylecolor(), for: .normal)
-            
-            if LLCurrentUser.currentuser.user.substyle.rawValue == 0 {
-                backgroundColor = fontcolor
-            }
-            else if   LLCurrentUser.currentuser.user.substyle.rawValue == 1 {
-                backgroundColor = darkcolor
-          
-            }
-            else if LLCurrentUser.currentuser.user.substyle.rawValue == 2  {
-                backgroundColor = UIColor.gray
-            }
-            
-        }
-        
+    
+        updatetheme()
         NOTIfyCenter.addObserver(self, selector: #selector(LLBaseButton.basegetnotify(_:)), name: NSNotification.Name(rawValue: notificationName), object: nil)
         
     }
@@ -36,34 +21,38 @@ class LLBaseButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    func  basegetnotify(_ notify:Notification){
-        let  str  =  notify.object  as!  String
-        switch str {
+    func   updatetheme(){
+        if  LLCurrentUser.currentuser.user != nil {
             
-        case LLPOSDarkStyle:
-        
+            
+            
+            if LLCurrentUser.currentuser.user.substyle.rawValue == 0 {
+                backgroundColor = fontcolor
+                 setTitleColor(UIColor.white, for: .normal)
+            }
+            else if   LLCurrentUser.currentuser.user.substyle.rawValue == 1 {
+                backgroundColor = darkcolor
+                setTitleColor(UIColor.white, for: .normal)
+                
+            }
+            else if LLCurrentUser.currentuser.user.substyle.rawValue == 2  {
+                backgroundColor = eyecolor
+                
+                 setTitleColor(UIColor.gray, for: .normal)
                 
                 
-            setTitleColor(UIColor.white, for: .normal)
-          
-            backgroundColor = darkcolor
+            }
             
-            
-            break;
-        case LLPOSLightStyle:
-             setTitleColor(fontcolor, for: .normal)
-            
-             backgroundColor = fontcolor
-            break;
-        case  LLPOSEyeStyle:
-             setTitleColor(eyecolor, for: .normal)
-              backgroundColor = UIColor.gray
-            
-            break;
-        default:
-            break;
         }
-        
+        else{
+            
+            backgroundColor = fontcolor
+            setTitleColor(UIColor.white, for: .normal)
+        }
+    }
+    
+    func  basegetnotify(_ notify:Notification){
+        updatetheme()
     }
     
     deinit {

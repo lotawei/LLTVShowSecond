@@ -58,7 +58,7 @@ open class YNSearchTextFieldView: UIView {
         self.cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         self.cancelButton.setTitleColor(UIColor.darkGray, for: .normal)
         self.cancelButton.setTitleColor(UIColor.darkGray.withAlphaComponent(0.3), for: .highlighted)
-        self.cancelButton.setTitle("Cancel", for: .normal)
+        self.cancelButton.setTitle("取消", for: .normal)
         self.cancelButton.isHidden = true
         self.addSubview(self.cancelButton)
     }

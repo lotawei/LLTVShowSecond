@@ -22,15 +22,15 @@ class DownItemCell: UITableViewCell ,DownMovieManangerpro{
     
     fileprivate var  itemdata:LLCategoryRecItem!
     @IBOutlet weak var bottomview:UIView!
-    @IBOutlet weak var lblname: LLBaseLable!
+    @IBOutlet weak var lblname: UILabel!
     @IBOutlet weak var postimg: UIImageView!
    
-    @IBOutlet weak var lblyear: LLBaseLable!
-    @IBOutlet weak var btnoperate: LLBaseButton!
+    @IBOutlet weak var lblyear: UILabel!
+    @IBOutlet weak var btnoperate: UIButton!
   
     @IBOutlet weak var progressview:KYCircularProgress!
     
-    @IBOutlet weak var lblproinfo: LLBaseLable!
+    @IBOutlet weak var lblproinfo: UILabel!
     
     var   curpro = 0.0
     var   itemmangager:LLDownMovieMananger?
@@ -53,17 +53,23 @@ class DownItemCell: UITableViewCell ,DownMovieManangerpro{
     func  changetext(_ sender:UIButton){
           if  sender.titleLabel?.text == "播放"{
             
-            
-            print(itemmangager?.identitystr)
+        
             if delegate != nil && (delegate?.responds(to: #selector(Fullplaypro.goplay(_:))))!{
                 
                 
                 delegate?.goplay!(itemdata.item_title + ".mp4")
             }
             
-            
-            
           }
+      else  if  sender.titleLabel?.text == "播放"{
+            
+            
+            
+            LLDownMovieMananger.startitem(itemdata, self)
+            
+            
+        }
+    
           else if   sender.titleLabel?.text == "暂停"{
                 LLDownMovieMananger.stopitem(itemdata, self)
                 
@@ -94,12 +100,20 @@ class DownItemCell: UITableViewCell ,DownMovieManangerpro{
         itemmangager =   LLDownMovieMananger.querytask(itemdata,self)
         
         
-        if  (itemmangager?.isdownloadsuccess)!{
+        if   (itemmangager?.downloaded)! && (itemmangager?.isdownloadsuccess)!{
             btnoperate.setTitle("播放", for: .normal)
             progressview.progress = 1.0
             lblproinfo.text = "已完成"
             itemmangager?.setdelegate(self)
         }
+            
+       else if   (itemmangager?.downloaded)! && !(itemmangager?.isdownloadsuccess)!{
+            btnoperate.setTitle("重新下载", for: .normal)
+            progressview.progress = 0
+            lblproinfo.text = "下载失败"
+            itemmangager?.setdelegate(self)
+        }
+            
         else if  (itemmangager?.cancleData != nil ){
                 progressview.progress = (itemmangager?.curpro)!
             
@@ -116,7 +130,8 @@ class DownItemCell: UITableViewCell ,DownMovieManangerpro{
         else {
             
                 btnoperate.setTitle("播放", for: .normal)
-               self.progressview.alpha = 0
+                progressview.progress = 1.0
+                lblproinfo.text = "已完成"
                 itemmangager?.setdelegate(self)
         }
         

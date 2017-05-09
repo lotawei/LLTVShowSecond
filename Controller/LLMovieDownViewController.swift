@@ -19,7 +19,7 @@ class LLMovieDownViewController: BaseViewController,UITableViewDelegate,UITableV
     
     
     //  当前的玩意儿
-   lazy var   items:[LLCategoryRecItem] = {
+    var   items:[LLCategoryRecItem] = {
         let   adb = LLSqlLiteHelper.share
         adb.query()
         let    downitems = LLDownMovieItems.share.items
@@ -104,9 +104,35 @@ class LLMovieDownViewController: BaseViewController,UITableViewDelegate,UITableV
         
         self.navigationController?.pushViewController(vdvc, animated: true)
         
-        
-        
-        
     }
+    //指定可编辑的行
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return  true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return  UITableViewCellEditingStyle.delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if  editingStyle == UITableViewCellEditingStyle.delete{
+            
+            let item  = items[indexPath.row]
+            //先删除本地
+            LLDownMovieMananger.removemanager(item)
+            _ =   LLDownMovieItems.share.removeitem(item)
+       
+            
+            let   ahelper = LLSqlLiteHelper.share
+            
+            
+            ahelper.deleteitem(item)
+            self.items.remove(at: indexPath.row)
+            self.tableview.deleteRows(at: [indexPath], with: .automatic)
+            self.tableview.reloadData()
+            
+            
+        }
+    }
+
 
 }

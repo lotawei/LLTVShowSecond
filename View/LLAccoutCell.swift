@@ -13,9 +13,9 @@ class LLAccoutCell: UITableViewCell {
     
     
     @IBOutlet weak var imgicon: UIImageView!
-    @IBOutlet weak var lblinfo: LLBaseLable!
+    @IBOutlet weak var lblinfo: UILabel!
     @IBOutlet weak var swtchange: UISwitch!
-    @IBOutlet weak var btnarrow: LLBaseButton!
+    @IBOutlet weak var btnarrow: UIButton!
     
     //  调用 .model 会调用此方法   message  icon  info
     var   model:[String:String]? = [:] {

@@ -28,7 +28,7 @@
                         <action selector="btnwatch:" destination="sEi-wD-1X0" eventType="touchUpInside" id="z1i-KG-KgQ"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="看过" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyG-BW-Uy1" userLabel="看过的节目" customClass="LLBaseLable" customModule="LLTVShow" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="看过" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyG-BW-Uy1" userLabel="看过的节目">
                     <rect key="frame" x="23" y="0.0" width="65" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="65" id="KOu-uo-p6d"/>
@@ -51,7 +51,7 @@
                         <action selector="btnlistcollect:" destination="sEi-wD-1X0" eventType="touchUpInside" id="eKH-Zf-Iox"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewe-TG-sGn" customClass="LLBaseLable" customModule="LLTVShow" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewe-TG-sGn">
                     <rect key="frame" x="133" y="0.0" width="65" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="MZ6-si-ac8"/>
@@ -105,7 +105,7 @@
                         <constraint firstAttribute="height" constant="30" id="mPd-up-C13"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evK-IW-iRl" userLabel="资料" customClass="LLBaseButton" customModule="LLTVShow" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evK-IW-iRl" userLabel="资料">
                     <rect key="frame" x="319" y="0.0" width="46" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="HeO-iz-NzO"/>

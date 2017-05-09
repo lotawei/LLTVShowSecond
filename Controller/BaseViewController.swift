@@ -38,7 +38,7 @@ class BaseViewController: UIViewController {
     }
     deinit {
         NOTIfyCenter.removeObserver(self, name: NSNotification.Name(rawValue: notificationName), object: nil)
-        NOTIfyCenter.removeObserver(self, name: NSNotification.Name(rawValue: notificationSelect), object: nil)
+
         print("base释放")
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -81,10 +81,10 @@ class BaseViewController: UIViewController {
         }
         NOTIfyCenter.addObserver(self, selector: #selector(BaseViewController.basegetnotify(_:)), name: NSNotification.Name(rawValue: notificationName), object: nil)
         
-        NOTIfyCenter.addObserver(self, selector: #selector(BaseViewController.basegetnotify(_:)), name: NSNotification.Name(rawValue: notificationSelect), object: nil)
+   
         
         
-        automaticallyAdjustsScrollViewInsets = false
+        
         navigationItem.titleView = titleView
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         

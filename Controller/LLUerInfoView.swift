@@ -18,8 +18,8 @@ protocol   LLUerInfoViewProDelegate {
 
 class LLUerInfoView: UIView {
     var   delegate:LLUerInfoViewProDelegate?
-    @IBOutlet weak var lblwatched: LLBaseLable!
-    @IBOutlet weak var lblcollected: LLBaseLable!
+    @IBOutlet weak var lblwatched: UILabel!
+    @IBOutlet weak var lblcollected: UILabel!
     
     
     //点击观看的

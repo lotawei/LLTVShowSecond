@@ -161,7 +161,7 @@ class LLAcountViewController: BaseViewController {
         //订阅
         NOTIfyCenter.addObserver(self, selector: #selector(LLAcountViewController.getnotify(_:)), name: NSNotification.Name(rawValue: notificationName), object: nil)
         
-        NOTIfyCenter.addObserver(self, selector: #selector(LLAcountViewController.getnotify(_:)), name: NSNotification.Name(rawValue: notificationSelect), object: nil)
+       
         
     }
     func animateTable(_ tableView:UITableView) {
@@ -372,8 +372,6 @@ class LLAcountViewController: BaseViewController {
         
         NOTIfyCenter.removeObserver(self, name: NSNotification.Name(rawValue: notificationName), object: nil)
         
-        NOTIfyCenter.removeObserver(self, name: NSNotification.Name(rawValue: notificationSelect), object: nil)
-        print("LLAcountViewController释放")
         
         
     }

@@ -12,7 +12,7 @@ class LLSearchViewController: YNSearchViewController ,YNSearchDelegate{
         super.viewDidLoad()
            view.backgroundColor = UIColor.init(patternImage: UIImage(named:"background")!)
         edgesForExtendedLayout = .top
-        automaticallyAdjustsScrollViewInsets = false
+        
         YNSearch.firstload()
         self.ynSearchinit()
         self.delegate = self

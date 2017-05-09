@@ -15,6 +15,7 @@ class LLCategoryRecItem: BmobObject {
     
     var   collectuser:BmobObject!
     var  downloadsuccess = false
+    var  downloaded = false
     
     var  iswatched:Bool!
     var  iscollected:Bool!

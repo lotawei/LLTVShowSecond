@@ -36,7 +36,10 @@ class LLDownMovieMananger: NSObject {
     //
     var  localitempath:URL?
     var   cancleData:Data?
+    var   downloaded:Bool = true
     
+    
+    var   firstsetdown = false
     // 保存当前进度
     var   curpro:Double = 0
     
@@ -86,7 +89,7 @@ class LLDownMovieMananger: NSObject {
         self.identitystr = identity
         
           weak  var   tmp = self
-        self.destination = { _, response in
+            self.destination = { _, response in
             let documentsPath = FileManager.default.urls(for: .documentDirectory,in: .userDomainMask)[0]
             let fileURL = documentsPath.appendingPathComponent((tmp?.identitystr)!)
             print("下载完成的路径" + fileURL.absoluteString)
@@ -111,6 +114,18 @@ class LLDownMovieMananger: NSObject {
     }
     func downloadProgress(progress: Progress) {
         
+        if   !firstsetdown {
+            downloaded = true
+            
+            isdownloadsuccess = false
+            
+            let   lochelper =  LLSqlLiteHelper.share
+            lochelper.saveitem(item,self.identitystr,false)
+            firstsetdown  = true
+
+        }
+        
+        
         curpro = progress.fractionCompleted
         
         self.delegate?.downitemprogress(progress,self.isdownloadsuccess)
@@ -121,7 +136,7 @@ class LLDownMovieMananger: NSObject {
         
         switch response.result {
         case .success:
-            
+            downloaded = true
             isdownloadsuccess = true
             
             let   lochelper =  LLSqlLiteHelper.share
@@ -129,7 +144,7 @@ class LLDownMovieMananger: NSObject {
             
             break
         case  .failure:
-            
+             downloaded = true
             self.cancleData = response.resumeData
             isdownloadsuccess = false
          
@@ -201,6 +216,7 @@ class LLDownMovieMananger: NSObject {
         cur = cur.appending(".mp4")
         for   manager in LLDownMovieMananger.sharemanager{
             if   manager.identitystr == cur{
+                
                 if !manager.isdownloadsuccess {
                    
                     
@@ -221,16 +237,26 @@ class LLDownMovieMananger: NSObject {
         for   manager in LLDownMovieMananger.sharemanager{
             if   manager.identitystr == cur{
                 if !manager.isdownloadsuccess {
-                   
-                    
                     manager.stopitem()
                     manager.delegate  = delegate
                 }
                 
             }
-            
-            
         }
+        
+    }
+    
+    static   func  removemanager(_ item:LLCategoryRecItem){
+        var   cur = ""
+        cur = cur.appending(item.item_title!)
+        cur = cur.appending(".mp4")
+        let   pos = LLDownMovieMananger.sharemanager.index { (anmager) -> Bool in
+            return   anmager.identitystr == cur
+        }
+        if  pos  != nil {
+              LLDownMovieMananger.sharemanager.remove(at: pos!)
+        }
+       
         
     }
     

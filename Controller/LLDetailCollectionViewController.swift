@@ -83,7 +83,7 @@ class LLDetailCollectionViewController: BaseViewController,BMPlayerDelegate,Deta
         collectionView.snp.makeConstraints { (maker) in
             maker.height.equalTo(collectionheight)
             maker.left.equalTo(0)
-            maker.top.equalTo(kStatusBarH)
+            maker.top.equalTo(view).offset(kNavigationBarH)
             maker.width.equalTo(ScreenWidth)
         }
         
@@ -113,7 +113,7 @@ class LLDetailCollectionViewController: BaseViewController,BMPlayerDelegate,Deta
         player.snp.makeConstraints { (maker) in
             maker.height.equalTo(300)
             maker.left.equalTo(0)
-            maker.top.equalTo(collectionheight)
+            maker.bottom.equalTo(view).offset(-kTabBarH)
             maker.width.equalTo(ScreenWidth)
         }
         
@@ -145,22 +145,20 @@ class LLDetailCollectionViewController: BaseViewController,BMPlayerDelegate,Deta
         
         
     }
+    
+    func getImage() -> UIImage {
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let  image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
     func   DidClickpreview(_ item: LLCategoryRecItem) {
         
-        //  测试
-        
-        
-        
-        
-        
-        
-        
+        //  测试s
         BMPlayerConf.shouldAutoPlay = true
         
         let url =  URL(string: item.tvurllink)!
-        
-     
-        
         let asset = BMPlayerResource(url:url)
         
          player.setVideo(resource: asset)
@@ -193,10 +191,10 @@ class LLDetailCollectionViewController: BaseViewController,BMPlayerDelegate,Deta
         if  item != nil {
          let shareParames = NSMutableDictionary()
         shareParames.ssdkEnableUseClientShare()
-        shareParames.ssdkSetupShareParams(byText: "分享内容",
-                                                images : UIImage(named: "分享"),
+        shareParames.ssdkSetupShareParams(byText: "谁能分享这个玩意儿",
+                                                images : getImage(),
                                                 url :URL( string:"https://github.com/lwiosbystep"),
-                                                title : "分享标题",
+                                                title : "一次分享",
                                                 type : SSDKContentType.image)
         
         //2.进行分享

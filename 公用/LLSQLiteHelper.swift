@@ -118,13 +118,20 @@ class  LLSqlLiteHelper:NSObject{
     }
     
     func  deleteitem(_ item:LLCategoryRecItem?){
-          
+        let itemtab = Table("downtable")
+         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let item_title = Expression<String>("item_title")
+        if  db == nil {
+            db = try? Connection("\(path)/db.sqlite3")
+        }
+         let  curitem =   itemtab.filter(item_title == (item?.item_title)!)
+        try! db?.run(curitem.delete())
         
         
     }
     
     func query() {
-        let   locamanager = LLDownMovieMananger()
+   
           let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         
         if  db == nil {
@@ -135,24 +142,27 @@ class  LLSqlLiteHelper:NSObject{
         let tvurllink = Expression<String>("tvurllink")
         let item_icon1 = Expression<String>("item_icon1")
         let isdownloadedsuccess = Expression<Bool>("isdownloadedsuccess")
+            let downloaded = Expression<Bool>("downloaded")
         let item_year = Expression<String>("item_year")
       
       
         let  item_identity =  Expression<String>("item_identity")
         for  dbitem in  (try! db?.prepare(itemtab))!{
+            let   locamanager = LLDownMovieMananger()
             let   item = LLCategoryRecItem(className: "LLCategoryRecItem")
             item?.item_title = dbitem[item_title]
             item?.tvurllink = dbitem[tvurllink]
             item?.item_icon1 = dbitem[item_icon1]
             item?.item_year = dbitem[item_year]
             item?.downloadsuccess = dbitem[isdownloadedsuccess]
+             item?.downloaded = dbitem[downloaded]
             locamanager.isdownloadsuccess = dbitem[isdownloadedsuccess]
-            if  locamanager.isdownloadsuccess {
-                locamanager.curpro = 1.0
-                locamanager.identitystr = dbitem[item_identity]
-                _ = LLDownMovieItems.share.addmovieitem(item!)
-                _  =  LLDownMovieMananger.additemanager(locamanager)
-            }
+            locamanager.downloaded = dbitem[downloaded]
+            
+            locamanager.identitystr = dbitem[item_identity]
+            _ = LLDownMovieItems.share.addmovieitem(item!)
+            _  =  LLDownMovieMananger.additemanager(locamanager)
+    
           
          
         }

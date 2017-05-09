@@ -117,7 +117,7 @@ let   LLPOSTAbout = "关于"
 // 制定通知
 
 let notificationName =  "notifystyle"
-let notificationSelect =  "notifyselect"
+
 let   NOTIfyCenter = NotificationCenter.default
 
 //

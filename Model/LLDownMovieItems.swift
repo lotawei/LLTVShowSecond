@@ -26,6 +26,8 @@ class LLDownMovieItems: NSObject {
           
             
             let   task = LLDownMovieMananger(item)
+            
+            
             task.isdownloadsuccess = item.downloadsuccess
             var   identity = ""
             identity =  identity.appending(item.item_title!)
@@ -56,30 +58,16 @@ class LLDownMovieItems: NSObject {
         
         identity = identity.appending(".mp4")
         task.identitystr = identity
-        
-        
         return   LLDownMovieMananger.additemanager(task)
-        
-      
-       
-        
     }
-    
-    
-    
-    func  removeitem(_ item:LLCategoryRecItem) -> Bool{
-           var   result = false
-        for   i in 0..<items.count{
-            
-             let  aitem  = items[i]
-            if  aitem.item_title == item.item_title{
-                
-                items.remove(at: i)
-                result = true
-               
-            }
-            
+    func  removeitem(_ item:LLCategoryRecItem){
+        
+        let   pos = items.index { (aitem) -> Bool in
+             return  aitem.item_title == item.item_title
         }
-        return  result
+        if  pos != nil {
+            items.remove(at: pos!)
+        }
+      
     }
 }

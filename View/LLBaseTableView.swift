@@ -26,43 +26,37 @@ class LLBaseTableView: UITableView {
                 }
             }
         }
-        if  LLCurrentUser.currentuser.user != nil {
-            if LLCurrentUser.currentuser.user.substyle == Substyle.dark{
-            
-             backgroundColor = tablebackcolor
-            }
-            else{
-                
-                backgroundColor = tablelightcolor
-
-            }
-        }
-        
+     
         
         NOTIfyCenter.addObserver(self, selector: #selector(LLBaseTableView.basegetnotify(_:)), name: NSNotification.Name(rawValue: notificationName), object: nil)
     
         
         
     }
-    func  basegetnotify(_ notify:Notification){
-        let  str  =  notify.object  as!  String
-        switch str {
+    func   updatetheme(){
+        if  LLCurrentUser.currentuser.user != nil {
+            if LLCurrentUser.currentuser.user.substyle == Substyle.dark{
+                
+                backgroundColor = tablebackcolor
+            }
+            else if LLCurrentUser.currentuser.user.substyle == Substyle.normal {
+                
+                backgroundColor = tablelightcolor
+                
+            }
+            else{
+                  backgroundColor = tableeyecolor
+            }
+        }
+        else{
             
-        case LLPOSDarkStyle:
-            backgroundColor = tablebackcolor
-            break;
-        case LLPOSLightStyle:
-            backgroundColor = tablelightcolor
-            
-            break;
-        case  LLPOSEyeStyle:
-            backgroundColor = tableeyecolor
-            
-            break;
-        default:
-            break;
+              backgroundColor = tablelightcolor
         }
         
+    }
+    
+    func  basegetnotify(_ notify:Notification){
+        updatetheme()
         
         
     }
@@ -80,7 +74,7 @@ class LLBaseTableView: UITableView {
     }
     deinit {
         NOTIfyCenter.removeObserver(self, name: NSNotification.Name(rawValue: notificationName), object: nil)
-        NOTIfyCenter.removeObserver(self, name: NSNotification.Name(rawValue: notificationSelect), object: nil)
+       
         print("base释放")
         
         

@@ -15,11 +15,11 @@ class LLResultItemCell: UITableViewCell {
 
     @IBOutlet weak var postimg: UIImageView!
     
-    @IBOutlet weak var lbname: LLBaseLable!
+    @IBOutlet weak var lbname: UILabel!
     
-    @IBOutlet weak var lbldirector: LLBaseLable!
+    @IBOutlet weak var lbldirector: UILabel!
     
-    @IBOutlet weak var lblyear: LLBaseLable!
+    @IBOutlet weak var lblyear: UILabel!
     
     @IBOutlet weak var lblscore: UILabel!
     

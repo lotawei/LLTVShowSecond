@@ -26,7 +26,7 @@
                             <constraint firstAttribute="width" constant="80" id="eUE-Pf-6JW"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atk-bX-cRk" customClass="LLBaseLable" customModule="LLTVShow" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atk-bX-cRk">
                         <rect key="frame" x="86" y="0.0" width="150" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="FMB-Ej-wqc"/>
@@ -44,7 +44,7 @@
                             <constraint firstAttribute="width" constant="375" id="u56-KE-m50"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKW-jl-2YB" customClass="LLBaseButton" customModule="LLTVShow" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKW-jl-2YB">
                         <rect key="frame" x="237" y="82" width="120" height="30"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
