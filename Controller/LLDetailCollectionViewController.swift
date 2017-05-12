@@ -83,7 +83,7 @@ class LLDetailCollectionViewController: BaseViewController,BMPlayerDelegate,Deta
         collectionView.snp.makeConstraints { (maker) in
             maker.height.equalTo(collectionheight)
             maker.left.equalTo(0)
-            maker.top.equalTo(view).offset(kNavigationBarH)
+            maker.top.equalTo(view)
             maker.width.equalTo(ScreenWidth)
         }
         
@@ -113,7 +113,7 @@ class LLDetailCollectionViewController: BaseViewController,BMPlayerDelegate,Deta
         player.snp.makeConstraints { (maker) in
             maker.height.equalTo(300)
             maker.left.equalTo(0)
-            maker.bottom.equalTo(view).offset(-kTabBarH)
+            maker.bottom.equalTo(view)
             maker.width.equalTo(ScreenWidth)
         }
         

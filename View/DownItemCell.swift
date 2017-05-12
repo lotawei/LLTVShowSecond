@@ -61,7 +61,7 @@ class DownItemCell: UITableViewCell ,DownMovieManangerpro{
             }
             
           }
-      else  if  sender.titleLabel?.text == "播放"{
+      else  if  sender.titleLabel?.text == "重新下载"{
             
             
             

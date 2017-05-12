@@ -42,17 +42,16 @@ class LLMainTabarController: LLAnimationTabBarController,UITabBarControllerDeleg
             
         case LLPOSDarkStyle:
            
-            curcolor()
+          
             
             break;
         case LLPOSLightStyle:
-            curcolor()
+          
             
             
             break;
         case  LLPOSEyeStyle:
           
-            curcolor()
             
             break;
         default:
